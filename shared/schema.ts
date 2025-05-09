@@ -75,6 +75,10 @@ export const createOrderSchema = z.object({
   phone: z.string().min(1, "Phone number is required"),
   pickupDate: z.string().min(1, "Pickup date is required"),
   pickupTime: z.string().min(1, "Pickup time is required"),
+  deliveryOption: z.enum(["pickup", "delivery"]).default("pickup"),
+  deliveryAddress: z.string().optional(),
+  deliveryCity: z.string().optional(),
+  deliveryPostalCode: z.string().optional(),
   specialInstructions: z.string().optional(),
   items: z.array(orderItemSchema),
 });

@@ -33,6 +33,9 @@ const Order = () => {
     document.title = "Order Macarons | Sweet Delights";
   }, []);
 
+  // Track delivery option state
+  const [deliveryOption, setDeliveryOption] = useState<"pickup" | "delivery">("pickup");
+  
   // Create form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,6 +46,10 @@ const Order = () => {
       phone: "",
       pickupDate: "",
       pickupTime: "",
+      deliveryOption: "pickup",
+      deliveryAddress: "",
+      deliveryCity: "",
+      deliveryPostalCode: "",
       specialInstructions: "",
       items: items
     },
@@ -151,26 +158,46 @@ const Order = () => {
               )}
             </div>
             
-            {/* Pickup Information */}
+            {/* Pickup & Delivery Information */}
             <div className="bg-[hsl(var(--primary-light))] p-6 rounded-xl shadow-md">
               <div className="flex items-center mb-4">
                 <Store className="text-[hsl(var(--accent))] mr-3 h-5 w-5" />
-                <h3 className="font-display text-lg font-semibold">Pickup Information</h3>
+                <h3 className="font-display text-lg font-semibold">Order Information</h3>
               </div>
-              <p className="text-sm mb-3">All orders are available for pickup at our bakery location:</p>
+              
+              <div className="mb-4 pb-4 border-b border-[hsl(var(--primary))]">
+                <h4 className="font-medium text-sm mb-2">Minimum Order Requirements:</h4>
+                <ul className="text-sm list-disc pl-5 space-y-1">
+                  <li>Minimum of 12 macarons per flavor</li>
+                  <li>Orders of 50+ macarons receive a discount ($1.80 each instead of $2.00)</li>
+                  <li>48 hours notice required for all orders</li>
+                </ul>
+              </div>
+              
+              <h4 className="font-medium text-sm mb-2">Pickup Location:</h4>
               <address className="not-italic text-sm mb-4">
-                <strong>Sweet Delights Bakery</strong><br />
-                123 Main Street<br />
-                Macaron City, MC 12345<br />
-                <a href="tel:5551234567" className="text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-dark))]">(555) 123-4567</a>
+                <strong>Simply Macarons</strong><br />
+                Victoria, BC, Canada<br />
+                <a href="tel:2508880000" className="text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-dark))]">(250) 888-0000</a>
               </address>
               
-              <div className="text-sm">
-                <strong>Pickup Hours:</strong>
-                <ul className="mt-1">
+              <div className="text-sm mb-4">
+                <h4 className="font-medium text-sm mb-2">Available Hours:</h4>
+                <ul className="list-disc pl-5 space-y-1">
                   <li>Tuesday - Friday: 10am - 6pm</li>
                   <li>Saturday: 9am - 4pm</li>
                   <li>Sunday - Monday: Closed</li>
+                </ul>
+              </div>
+              
+              <div className="text-sm bg-[hsl(var(--secondary-light))] p-3 rounded-md">
+                <h4 className="font-medium mb-1">Delivery Information:</h4>
+                <p>We offer delivery within Victoria and surrounding areas for an additional fee:</p>
+                <ul className="list-disc pl-5 space-y-1 mt-2">
+                  <li>Victoria Area: $20</li>
+                  <li>Saanich: $25</li>
+                  <li>Langford/Colwood: $30</li>
+                  <li>Other areas: Please inquire</li>
                 </ul>
               </div>
             </div>
@@ -311,6 +338,101 @@ const Order = () => {
                     </FormItem>
                   )}
                 />
+                
+                <div className="mb-6">
+                  <h4 className="font-medium text-lg mb-3">Delivery Options</h4>
+                  <div className="bg-[hsl(var(--secondary-light))] p-3 rounded-md mb-4">
+                    <FormField
+                      control={form.control}
+                      name="deliveryOption"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormControl>
+                            <div className="flex flex-col space-y-2">
+                              <label className="flex items-center space-x-2 cursor-pointer">
+                                <input 
+                                  type="radio"
+                                  checked={field.value === "pickup"}
+                                  onChange={() => {
+                                    field.onChange("pickup");
+                                    setDeliveryOption("pickup");
+                                  }}
+                                  className="h-4 w-4 text-[hsl(var(--accent))]"
+                                />
+                                <span>Pickup (Free)</span>
+                              </label>
+                              <label className="flex items-center space-x-2 cursor-pointer">
+                                <input 
+                                  type="radio"
+                                  checked={field.value === "delivery"}
+                                  onChange={() => {
+                                    field.onChange("delivery");
+                                    setDeliveryOption("delivery");
+                                  }}
+                                  className="h-4 w-4 text-[hsl(var(--accent))]"
+                                />
+                                <span>Delivery (Starting at $20, varies by distance)</span>
+                              </label>
+                            </div>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  
+                  {deliveryOption === "delivery" && (
+                    <div className="space-y-3 border border-gray-200 rounded-md p-3">
+                      <FormField
+                        control={form.control}
+                        name="deliveryAddress"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Delivery Address</FormLabel>
+                            <FormControl>
+                              <Input placeholder="123 Street Name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <div className="grid grid-cols-2 gap-3">
+                        <FormField
+                          control={form.control}
+                          name="deliveryCity"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>City</FormLabel>
+                              <FormControl>
+                                <Input placeholder="Victoria" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <FormField
+                          control={form.control}
+                          name="deliveryPostalCode"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Postal Code</FormLabel>
+                              <FormControl>
+                                <Input placeholder="V8V 1V1" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      
+                      <p className="text-xs text-gray-500 mt-2">
+                        *Delivery fee will be calculated based on distance and added to your total
+                      </p>
+                    </div>
+                  )}
+                </div>
                 
                 <FormField
                   control={form.control}
