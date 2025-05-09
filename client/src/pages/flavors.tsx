@@ -2,17 +2,19 @@ import { useQuery } from "@tanstack/react-query";
 import { useCart } from "@/lib/cartContext";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
-import { InfoIcon, CheckIcon } from "lucide-react";
+import { InfoIcon, CheckIcon, Minus, Plus } from "lucide-react";
 import { Flavor } from "@shared/schema";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const Flavors = () => {
   const { toast } = useToast();
   const { addItem } = useCart();
+  const [quantities, setQuantities] = useState<Record<number, number>>({});
   
   // Set page title
   useEffect(() => {
-    document.title = "Macaron Flavors | Sweet Delights Macarons";
+    document.title = "Our Flavors | Simply Macarons";
   }, []);
 
   // Fetch flavors from the server
@@ -20,17 +22,41 @@ const Flavors = () => {
     queryKey: ["/api/flavors"],
   });
 
+  const handleQuantityChange = (flavorId: number, delta: number) => {
+    setQuantities(prev => {
+      // Get current quantity or default to minimum of 12
+      const currentQty = prev[flavorId] || 12;
+      
+      // Calculate new quantity, ensuring it doesn't go below 12
+      const newQty = Math.max(12, currentQty + delta);
+      
+      return {
+        ...prev,
+        [flavorId]: newQty
+      };
+    });
+  };
+
   const handleAddToCart = (flavor: Flavor) => {
+    // Get quantity for this flavor (default to 12 if not set)
+    const quantity = quantities[flavor.id] || 12;
+    
     addItem({
       id: flavor.id,
       name: flavor.name,
-      price: flavor.price,
-      quantity: 1
+      price: flavor.price, 
+      quantity
     });
+    
+    // Reset quantity after adding to cart
+    setQuantities(prev => ({
+      ...prev,
+      [flavor.id]: 12
+    }));
     
     toast({
       title: "Added to cart",
-      description: `Added ${flavor.name} to your cart`,
+      description: `Added ${quantity} ${flavor.name} macarons to your cart`,
       variant: "default",
     });
   };
@@ -82,11 +108,40 @@ const Flavors = () => {
                     <span className="text-[hsl(var(--accent))] font-medium">${(flavor.price / 100).toFixed(2)}</span>
                   </div>
                   <p className="text-sm mb-4">{flavor.description}</p>
+                  
+                  <div className="flex items-center justify-between mb-3 text-sm">
+                    <span>Quantity: <strong>{quantities[flavor.id] || 12}</strong></span>
+                    <div className="flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        className="h-7 w-7 rounded-full p-0" 
+                        onClick={() => handleQuantityChange(flavor.id, -1)}
+                        disabled={(quantities[flavor.id] || 12) <= 12}
+                      >
+                        <Minus className="h-3 w-3" />
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="h-7 w-7 rounded-full p-0"
+                        onClick={() => handleQuantityChange(flavor.id, 1)}
+                      >
+                        <Plus className="h-3 w-3" />
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="h-7 p-0 px-2 text-xs"
+                        onClick={() => handleQuantityChange(flavor.id, 12)}
+                      >
+                        +12
+                      </Button>
+                    </div>
+                  </div>
+                  
                   <button 
                     onClick={() => handleAddToCart(flavor)}
-                    className="w-full py-2 px-4 bg-[hsl(var(--cream))] hover:bg-[hsl(var(--primary))] text-[hsl(var(--accent))] font-medium rounded-md transition-colors"
+                    className="w-full py-2 px-4 bg-[hsl(var(--primary-light))] hover:bg-[hsl(var(--primary))] text-[hsl(var(--accent))] font-medium rounded-md transition-colors"
                   >
-                    Add to Cart
+                    Add to Cart ({quantities[flavor.id] || 12})
                   </button>
                 </div>
               </motion.div>
@@ -102,15 +157,19 @@ const Flavors = () => {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <CheckIcon className="text-[hsl(var(--mint))] mt-1 mr-2 h-4 w-4" />
-              <span>Minimum order of 12 macarons ($24.00)</span>
+              <span>Minimum order of 12 macarons per flavor ($24.00 per dozen)</span>
             </li>
             <li className="flex items-start">
               <CheckIcon className="text-[hsl(var(--mint))] mt-1 mr-2 h-4 w-4" />
-              <span>Mix and match flavors to create your perfect dozen</span>
+              <span>After the minimum, add more in increments of 1 or 12</span>
             </li>
             <li className="flex items-start">
               <CheckIcon className="text-[hsl(var(--mint))] mt-1 mr-2 h-4 w-4" />
-              <span>Special packaging available for gift orders</span>
+              <span><strong>Discount:</strong> Orders of 50+ macarons are discounted to $1.80 each</span>
+            </li>
+            <li className="flex items-start">
+              <CheckIcon className="text-[hsl(var(--mint))] mt-1 mr-2 h-4 w-4" />
+              <span>Delivery available for an additional fee (starting at $20, varies by distance)</span>
             </li>
             <li className="flex items-start">
               <CheckIcon className="text-[hsl(var(--mint))] mt-1 mr-2 h-4 w-4" />

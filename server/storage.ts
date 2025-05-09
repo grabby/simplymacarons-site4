@@ -46,48 +46,90 @@ export class MemStorage implements IStorage {
     this.initializeFlavors();
   }
 
-  // Initialize with default macaron flavors
+  // Initialize with flavors from simplymacarons.ca
   private initializeFlavors() {
     const defaultFlavors: InsertFlavor[] = [
       {
-        name: "Vanilla Bean",
-        description: "Classic vanilla bean macaron with a smooth vanilla bean buttercream filling.",
+        name: "Vanilla",
+        description: "Classic vanilla macaron with smooth vanilla buttercream filling",
         imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200, // $2.00
         available: true
       },
       {
-        name: "Raspberry",
-        description: "Vibrant raspberry macaron with a tart raspberry jam center and white chocolate ganache.",
-        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
-        price: 200,
-        available: true
-      },
-      {
         name: "Chocolate",
-        description: "Rich chocolate macaron with a silky dark chocolate ganache filling.",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
-        price: 200,
-        available: true
-      },
-      {
-        name: "Pistachio",
-        description: "Delicate pistachio macaron filled with a creamy pistachio buttercream.",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
-        price: 200,
-        available: true
-      },
-      {
-        name: "Lemon",
-        description: "Bright lemon macaron with a zesty lemon curd filling that balances sweet and tart.",
+        description: "Rich chocolate macaron with dark chocolate ganache",
         imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
         available: true
       },
       {
         name: "Salted Caramel",
-        description: "Golden macaron with a decadent salted caramel filling that melts in your mouth.",
+        description: "Sweet and salty caramel macaron with decadent caramel filling",
         imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Raspberry",
+        description: "Vibrant raspberry macaron with raspberry jam filling",
+        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Pistachio",
+        description: "Nutty pistachio macaron with creamy pistachio buttercream",
+        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Lemon",
+        description: "Tangy lemon macaron with zesty lemon curd filling",
+        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Hazelnut Chocolate",
+        description: "Hazelnut-infused macaron with chocolate hazelnut filling",
+        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Coffee",
+        description: "Bold coffee macaron with espresso buttercream",
+        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Earl Grey",
+        description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
+        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Strawberry",
+        description: "Sweet strawberry macaron with strawberry jam filling",
+        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Espresso",
+        description: "Rich espresso macaron with coffee-infused buttercream",
+        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Matcha",
+        description: "Japanese green tea macaron with matcha buttercream",
+        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
         available: true
       }

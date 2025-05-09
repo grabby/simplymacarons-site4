@@ -73,9 +73,21 @@ export const useCartStore = create<CartStore>((set, get) => ({
     set({ items: [] });
   },
   
-  // Calculate the total price
+  // Calculate the total price with discount for orders of 50+ macarons
   getTotalPrice: () => {
-    return get().items.reduce(
+    const items = get().items;
+    const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+    
+    // Apply 10% discount ($1.80 per macaron instead of $2.00) for orders of 50+
+    if (totalQuantity >= 50) {
+      return items.reduce(
+        (total, item) => total + Math.floor(item.price * 0.9) * item.quantity,
+        0
+      );
+    }
+    
+    // Regular price for orders under 50 macarons
+    return items.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
