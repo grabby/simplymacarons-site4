@@ -174,31 +174,34 @@ const Order = () => {
                 </ul>
               </div>
               
-              <h4 className="font-medium text-sm mb-2">Pickup Location:</h4>
-              <address className="not-italic text-sm mb-4">
-                <strong>Simply Macarons</strong><br />
-                Victoria, BC, Canada<br />
-                <a href="tel:2508880000" className="text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-dark))]">(250) 888-0000</a>
-              </address>
-              
-              <div className="text-sm mb-4">
-                <h4 className="font-medium text-sm mb-2">Available Hours:</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Tuesday - Friday: 10am - 6pm</li>
-                  <li>Saturday: 9am - 4pm</li>
-                  <li>Sunday - Monday: Closed</li>
-                </ul>
+              <div className="mb-4 pb-4 border-b border-[hsl(var(--primary))]">
+                <h4 className="font-medium text-sm mb-2">Pickup Location:</h4>
+                <address className="not-italic text-sm mb-3">
+                  <strong>Simply Macarons</strong><br />
+                  Victoria (Saanich area), BC, Canada<br />
+                  <span className="text-gray-600">Near postal code V8X 5L1</span><br />
+                  <a href="tel:2508880000" className="text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-dark))]">(250) 888-0000</a>
+                </address>
+                
+                {/* Simple Map Placeholder */}
+                <div className="mt-3 rounded-md overflow-hidden border border-gray-200">
+                  <img 
+                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+e91e63(-123.377,48.455)/-123.377,48.455,13,0/300x150@2x?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" 
+                    alt="Map showing general pickup area" 
+                    className="w-full h-auto"
+                  />
+                  <div className="bg-white p-2 text-xs text-center text-gray-600">
+                    Approximate pickup area - exact address provided after order confirmation
+                  </div>
+                </div>
               </div>
               
               <div className="text-sm bg-[hsl(var(--secondary-light))] p-3 rounded-md">
                 <h4 className="font-medium mb-1">Delivery Information:</h4>
-                <p>We offer delivery within Victoria and surrounding areas for an additional fee:</p>
-                <ul className="list-disc pl-5 space-y-1 mt-2">
-                  <li>Victoria Area: $20</li>
-                  <li>Saanich: $25</li>
-                  <li>Langford/Colwood: $30</li>
-                  <li>Other areas: Please inquire</li>
-                </ul>
+                <p>We offer delivery within Victoria and surrounding areas for an additional fee starting at $20.</p>
+                <p className="mt-2 text-xs italic">
+                  * Delivery fees vary depending on distance - please provide your full address during checkout for accurate pricing.
+                </p>
               </div>
             </div>
           </div>
@@ -216,7 +219,7 @@ const Order = () => {
                       <FormItem>
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John" {...field} />
+                          <Input placeholder="John" className="placeholder:text-gray-400" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -230,7 +233,7 @@ const Order = () => {
                       <FormItem>
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Doe" {...field} />
+                          <Input placeholder="Doe" className="placeholder:text-gray-400" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -245,7 +248,7 @@ const Order = () => {
                     <FormItem className="mb-4">
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="john.doe@example.com" className="placeholder:text-gray-400" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -259,7 +262,7 @@ const Order = () => {
                     <FormItem className="mb-4">
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="(555) 123-4567" {...field} />
+                        <Input type="tel" placeholder="(555) 123-4567" className="placeholder:text-gray-400" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -390,7 +393,7 @@ const Order = () => {
                           <FormItem>
                             <FormLabel>Delivery Address</FormLabel>
                             <FormControl>
-                              <Input placeholder="123 Street Name" {...field} />
+                              <Input placeholder="123 Street Name" className="placeholder:text-gray-400" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -405,7 +408,7 @@ const Order = () => {
                             <FormItem>
                               <FormLabel>City</FormLabel>
                               <FormControl>
-                                <Input placeholder="Victoria" {...field} />
+                                <Input placeholder="Victoria" className="placeholder:text-gray-400" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -419,7 +422,7 @@ const Order = () => {
                             <FormItem>
                               <FormLabel>Postal Code</FormLabel>
                               <FormControl>
-                                <Input placeholder="V8V 1V1" {...field} />
+                                <Input placeholder="V8V 1V1" className="placeholder:text-gray-400" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -441,7 +444,7 @@ const Order = () => {
                     <FormItem className="mb-6">
                       <FormLabel>Special Instructions</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Any special requests or instructions for your order" {...field} />
+                        <Textarea placeholder="Any special requests or instructions for your order" className="placeholder:text-gray-400" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

@@ -45,6 +45,9 @@ const CustomBox = () => {
         return rest;
       }
       
+      // Log the updated selection for debugging
+      console.log("Updated flavor selection:", { ...prev, [flavorId]: newQuantity });
+      
       return { ...prev, [flavorId]: newQuantity };
     });
   };
