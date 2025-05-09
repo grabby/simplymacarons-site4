@@ -12,8 +12,12 @@ import CustomBox from "@/pages/custom-box";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cartContext";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 function Router() {
+  // Scroll to top on route change
+  useScrollTop();
+  
   return (
     <Switch>
       <Route path="/" component={Home}/>

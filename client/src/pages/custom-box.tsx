@@ -115,7 +115,7 @@ const CustomBox = () => {
               value={boxName}
               onChange={(e) => setBoxName(e.target.value)}
               placeholder="My Custom Box"
-              className="w-full"
+              className="w-full placeholder:text-gray-400"
             />
           </div>
 
