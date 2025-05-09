@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,21 +13,105 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cartContext";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Router() {
   // Scroll to top on route change
   useScrollTop();
   
+  // Get the current location for animation
+  const [location] = useLocation();
+  
+  // Animation variants for page transitions
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      y: 20
+    },
+    in: {
+      opacity: 1,
+      y: 0
+    },
+    exit: {
+      opacity: 0,
+      y: -20
+    }
+  };
+  
+  // Animation settings
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.4
+  };
+  
+  const PageWrapper = ({ children }: { children: React.ReactNode }) => (
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="exit"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
+  );
+  
   return (
-    <Switch>
-      <Route path="/" component={Home}/>
-      <Route path="/flavors" component={Flavors}/>
-      <Route path="/custom-box" component={CustomBox}/>
-      <Route path="/order" component={Order}/>
-      <Route path="/about" component={About}/>
-      <Route path="/invoice/:orderNumber" component={Invoice}/>
-      <Route component={NotFound} />
-    </Switch>
+    <AnimatePresence mode="wait">
+      <Switch key={location}>
+        <Route path="/">
+          {(params) => (
+            <PageWrapper>
+              <Home />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route path="/flavors">
+          {(params) => (
+            <PageWrapper>
+              <Flavors />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route path="/custom-box">
+          {(params) => (
+            <PageWrapper>
+              <CustomBox />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route path="/order">
+          {(params) => (
+            <PageWrapper>
+              <Order />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route path="/about">
+          {(params) => (
+            <PageWrapper>
+              <About />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route path="/invoice/:orderNumber">
+          {(params) => (
+            <PageWrapper>
+              <Invoice {...params} />
+            </PageWrapper>
+          )}
+        </Route>
+        <Route>
+          {() => (
+            <PageWrapper>
+              <NotFound />
+            </PageWrapper>
+          )}
+        </Route>
+      </Switch>
+    </AnimatePresence>
   );
 }
 

@@ -178,20 +178,19 @@ const Order = () => {
                 <h4 className="font-medium text-sm mb-2">Pickup Location:</h4>
                 <address className="not-italic text-sm mb-3">
                   <strong>Simply Macarons</strong><br />
-                  Victoria (Saanich area), BC, Canada<br />
-                  <span className="text-gray-600">Near postal code V8X 5L1</span><br />
-                  <a href="tel:2508880000" className="text-[hsl(var(--accent))] hover:text-[hsl(var(--accent-dark))]">(250) 888-0000</a>
+                  Victoria (Saanich area), BC, Canada
                 </address>
                 
-                {/* Simple Map Placeholder */}
+                {/* Map Placeholder */}
                 <div className="mt-3 rounded-md overflow-hidden border border-gray-200">
-                  <img 
-                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+e91e63(-123.377,48.455)/-123.377,48.455,13,0/300x150@2x?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" 
-                    alt="Map showing general pickup area" 
-                    className="w-full h-auto"
-                  />
-                  <div className="bg-white p-2 text-xs text-center text-gray-600">
-                    Approximate pickup area - exact address provided after order confirmation
+                  <div className="bg-[#f2f6f8] h-[150px] flex items-center justify-center relative">
+                    <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url(https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg)' }}></div>
+                    <div className="relative z-10 p-4 text-center">
+                      <div className="bg-white/80 p-3 rounded-md shadow-sm">
+                        <p className="font-medium text-[hsl(var(--accent-dark))]">Saanich Area</p>
+                        <p className="text-xs text-gray-600 mt-1">Exact address provided after order confirmation</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

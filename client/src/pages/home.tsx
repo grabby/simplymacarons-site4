@@ -16,7 +16,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="relative rounded-3xl overflow-hidden mb-12 shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=500&q=80" 
+              src="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg" 
               alt="Colorful macarons arranged beautifully" 
               className="w-full h-64 md:h-96 object-cover" 
             />
@@ -40,7 +40,7 @@ const Home = () => {
                     whileTap={{ scale: 0.95 }}
                     className="inline-block bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent-dark))] text-white py-3 px-8 rounded-full transition-colors font-medium"
                   >
-                    Explore Flavors
+                    Order Macarons Now
                   </motion.a>
                 </Link>
               </motion.div>
@@ -99,8 +99,8 @@ const Home = () => {
               className="md:w-1/2"
             >
               <img 
-                src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500&q=80" 
-                alt="Our bakery interior with macaron displays" 
+                src="https://simplymacarons.ca/assets/images/simply-macarons-pretty-in-pink.jpg" 
+                alt="Pretty in pink macarons" 
                 className="rounded-2xl shadow-lg w-full h-auto" 
               />
             </motion.div>
@@ -124,6 +124,107 @@ const Home = () => {
                 </a>
               </Link>
             </motion.div>
+          </div>
+          
+          {/* Gallery Section */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h2 className="font-display text-3xl font-bold mb-2">Our Macaron Gallery</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Take a look at some of our beautiful creations, each handcrafted with care and attention to detail</p>
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <div className="relative overflow-hidden rounded-xl shadow-md group">
+                <img 
+                  src="https://simplymacarons.ca/assets/images/simply-macarons-lemon-buttercream.jpg" 
+                  alt="Lemon buttercream macarons" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display text-lg font-semibold">Lemon Buttercream</h3>
+                    <p className="text-sm">Zesty lemon flavor with smooth buttercream filling</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-xl shadow-md group">
+                <img 
+                  src="https://simplymacarons.ca/assets/images/simply-macarons-bumble-bees.jpg" 
+                  alt="Bumble bee themed macarons" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display text-lg font-semibold">Bumble Bee</h3>
+                    <p className="text-sm">Honey-infused macarons with creative bee design</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-xl shadow-md group">
+                <img 
+                  src="https://simplymacarons.ca/assets/images/simply-macarons-double-chocolate.jpg" 
+                  alt="Double chocolate macarons" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display text-lg font-semibold">Double Chocolate</h3>
+                    <p className="text-sm">Rich chocolate shells with decadent chocolate ganache</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-xl shadow-md group sm:col-span-2 lg:col-span-1">
+                <img 
+                  src="https://simplymacarons.ca/assets/images/simply-macarons-halloween-flavours.jpg" 
+                  alt="Halloween themed macarons" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display text-lg font-semibold">Seasonal Creations</h3>
+                    <p className="text-sm">Special flavors and designs for holidays and occasions</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-xl shadow-md group sm:col-span-2 lg:col-span-2">
+                <img 
+                  src="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg" 
+                  alt="Colorful macaron assortment" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-display text-lg font-semibold">Colorful Assortment</h3>
+                    <p className="text-sm">A vibrant mix of our most popular flavors</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <div className="text-center mt-8">
+              <Link to="/flavors">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center px-6 py-3 bg-[hsl(var(--secondary))] hover:bg-[hsl(var(--secondary-dark))] text-[hsl(var(--accent-dark))] font-medium rounded-full transition-colors"
+                >
+                  View All Flavors
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </motion.a>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
