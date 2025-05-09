@@ -36,9 +36,16 @@ const NavBar = () => {
 
   return (
     <header className={`sticky top-0 z-50 bg-[hsl(var(--cream))] transition-shadow duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
+      {/* Small location bar */}
+      <div className="bg-[hsl(var(--accent))] text-white text-xs py-1 text-center">
+        <div className="container mx-auto px-4">
+          <span>Hand-crafted macarons made in Victoria, BC</span>
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="font-display text-2xl font-bold text-[hsl(var(--accent))]">Sweet Delights</span>
+          <span className="font-display text-2xl font-bold text-[hsl(var(--accent))]">Simply Macarons</span>
         </Link>
         
         <nav className="hidden md:flex space-x-6">

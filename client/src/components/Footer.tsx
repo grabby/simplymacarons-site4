@@ -6,17 +6,16 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-display text-xl font-semibold mb-4">Sweet Delights</h3>
-            <p className="text-white/80 text-sm">Handcrafted macarons made with love and the finest ingredients.</p>
+            <h3 className="font-display text-xl font-semibold mb-4">Simply Macarons</h3>
+            <p className="text-white/80 text-sm">Handcrafted artisanal macarons made with love and premium ingredients in Victoria, BC.</p>
           </div>
           
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
             <address className="not-italic text-white/80 text-sm">
-              123 Main Street<br />
-              Macaron City, MC 12345<br />
-              <a href="tel:5551234567" className="hover:text-[hsl(var(--primary-light))] transition-colors">(555) 123-4567</a><br />
-              <a href="mailto:hello@sweetdelights.com" className="hover:text-[hsl(var(--primary-light))] transition-colors">hello@sweetdelights.com</a>
+              Victoria, BC, Canada<br />
+              <a href="tel:2508880000" className="hover:text-[hsl(var(--primary-light))] transition-colors">(250) 888-0000</a><br />
+              <a href="mailto:hello@simplymacarons.ca" className="hover:text-[hsl(var(--primary-light))] transition-colors">hello@simplymacarons.ca</a>
             </address>
           </div>
           
@@ -32,7 +31,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-white/60 text-sm">&copy; {new Date().getFullYear()} Sweet Delights. All rights reserved.</p>
+            <p className="text-white/60 text-sm">&copy; {new Date().getFullYear()} Simply Macarons. All rights reserved.</p>
           </div>
           
           <div className="flex space-x-4">

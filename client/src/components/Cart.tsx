@@ -1,6 +1,6 @@
 import { useCart } from "@/lib/cartContext";
 import { Link } from "wouter";
-import { X, Plus, Minus, ShoppingBag } from "lucide-react";
+import { X, Plus, Minus, ShoppingBag, TagIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -10,8 +10,10 @@ interface CartProps {
 }
 
 const Cart = ({ isOpen, onClose }: CartProps) => {
-  const { items, updateQuantity, removeItem, getTotalPrice } = useCart();
+  const { items, updateQuantity, removeItem, getTotalPrice, getTotalItems } = useCart();
   const [mounted, setMounted] = useState(false);
+  const totalItems = mounted ? getTotalItems() : 0;
+  const isDiscounted = totalItems >= 50;
 
   // Prevent hydration mismatch
   useEffect(() => {
@@ -98,24 +100,50 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
             </div>
             
             <div className="border-t border-gray-200 p-4 bg-[hsl(var(--cream))]">
-              <div className="flex justify-between mb-4">
-                <span className="font-medium">Total</span>
+              {/* Discount message */}
+              {isDiscounted && (
+                <div className="bg-[hsl(var(--primary-light))] p-2 rounded-md mb-3 text-xs flex items-start">
+                  <TagIcon className="h-4 w-4 text-[hsl(var(--accent))] flex-shrink-0 mr-2 mt-0.5" />
+                  <span>
+                    <strong>Discount applied!</strong> Your order of 50+ macarons qualifies for our discounted rate of $1.80 each.
+                  </span>
+                </div>
+              )}
+              
+              {/* Show message if close to discount */}
+              {totalItems >= 30 && totalItems < 50 && (
+                <div className="bg-[hsl(var(--secondary-light))] p-2 rounded-md mb-3 text-xs">
+                  <span>Add {50 - totalItems} more macarons to qualify for our discounted rate of $1.80 each!</span>
+                </div>
+              )}
+              
+              <div className="flex justify-between mb-2">
+                <span className="font-medium">Total ({totalItems} macarons)</span>
                 <span className="font-semibold">${(getTotalPrice() / 100).toFixed(2)}</span>
               </div>
+              
+              {isDiscounted && (
+                <div className="flex justify-between mb-4 text-xs text-[hsl(var(--accent))]">
+                  <span>Savings</span>
+                  <span>${(totalItems * 20 / 100).toFixed(2)}</span>
+                </div>
+              )}
+              
               <Link 
                 to="/order" 
                 className={`block w-full py-3 px-4 ${
-                  items.length < 12 
+                  totalItems < 12 
                     ? 'bg-gray-400 cursor-not-allowed' 
                     : 'bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent-dark))]'
                 } text-white text-center rounded-md transition-colors font-medium`}
-                onClick={items.length >= 12 ? onClose : (e) => e.preventDefault()}
+                onClick={totalItems >= 12 ? onClose : (e) => e.preventDefault()}
               >
-                {items.length < 12 
-                  ? `Add ${12 - items.length} more for minimum order` 
+                {totalItems < 12 
+                  ? `Add ${12 - totalItems} more for minimum order` 
                   : 'Proceed to Order'}
               </Link>
-              {items.length > 0 && items.length < 12 && (
+              
+              {totalItems > 0 && totalItems < 12 && (
                 <p className="text-xs text-center mt-2 text-gray-500">
                   Minimum order is 12 macarons
                 </p>
