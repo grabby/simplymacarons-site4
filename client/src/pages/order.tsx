@@ -196,12 +196,24 @@ const Order = () => {
                 </div>
               </div>
               
-              <div className="text-sm bg-[hsl(var(--secondary-light))] p-3 rounded-md">
-                <h4 className="font-medium mb-1">Delivery Information:</h4>
-                <p>We offer delivery within Victoria and surrounding areas for an additional fee starting at $20.</p>
-                <p className="mt-2 text-xs italic">
-                  * Delivery fees vary depending on distance - please provide your full address during checkout for accurate pricing.
-                </p>
+              <div className="space-y-3">
+                <div className="text-sm bg-[hsl(var(--secondary-light))] p-3 rounded-md">
+                  <h4 className="font-medium mb-1">Delivery Information:</h4>
+                  <p>We offer delivery within Victoria and surrounding areas for an additional fee starting at $20.</p>
+                  <p className="mt-2 text-xs italic">
+                    * Delivery fees vary depending on distance - please provide your full address during checkout for accurate pricing.
+                  </p>
+                </div>
+                
+                <div className="text-sm bg-[hsl(var(--secondary-light))] p-3 rounded-md">
+                  <h4 className="font-medium mb-1">Payment Methods:</h4>
+                  <p>Payment is accepted on pick-up or delivery:</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-2">
+                    <li>Cash</li>
+                    <li>E-transfer</li>
+                    <li>Credit Card via Square</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
