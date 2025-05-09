@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 30 33% 98%;
+  --foreground: 24 16% 46%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 16% 46%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 16% 46%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 336 80% 90%;
+  --primary-foreground: 336 80% 40%;
+  --secondary: 20 60% 77%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 334 55% 62%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 336 80% 90%;
+  --radius: 0.5rem;
+  
+  /* Custom colors */
+  --cream: 38 100% 98%;
+  --mocha: 22 12% 46%;
+  --mint: 124 26% 56%;
+  --primary-light: 336 80% 95%;
+  --secondary-light: 18 50% 88%;
+  --accent-light: 334 55% 80%;
+  --accent-dark: 334 55% 50%;
+  
+  /* Chart colors */
+  --chart-1: 336 80% 90%;
+  --chart-2: 20 60% 77%;
+  --chart-3: 334 55% 62%;
+  --chart-4: 30 33% 98%;
+  --chart-5: 22 12% 46%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 336 80% 90%;
+  --primary-foreground: 336 80% 40%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 334 55% 62%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[hsl(var(--cream))] text-[hsl(var(--mocha))] font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
