@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Plus, Minus, ShoppingBag, Sparkles } from "lucide-react";
+import { Loader2, Plus, Minus, ShoppingBag, Sparkles, Palette } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import MacaronColorPicker from "@/components/MacaronColorPicker";
 
 const CustomBox = () => {
   const { toast } = useToast();
@@ -16,6 +17,16 @@ const CustomBox = () => {
   const [selectedFlavors, setSelectedFlavors] = useState<{[id: number]: number}>({});
   const [boxName, setBoxName] = useState("My Custom Box");
   const [totalMacarons, setTotalMacarons] = useState(0);
+  
+  // State for macaron color customization
+  const [selectedShellColor, setSelectedShellColor] = useState({ 
+    name: "Pink", 
+    value: "#FFC0CB" 
+  });
+  const [selectedFillingColor, setSelectedFillingColor] = useState({ 
+    name: "Vanilla Cream", 
+    value: "#FFFDD0" 
+  });
   
   // Set page title
   useEffect(() => {
@@ -67,12 +78,14 @@ const CustomBox = () => {
     const pricePerMacaron = totalMacarons >= 50 ? 180 : 200; // in cents
     const totalPrice = totalMacarons * pricePerMacaron;
     
-    // Add to cart
+    // Add to cart with color customization
     addItem({
       id: Date.now(), // use timestamp as unique ID for custom box
       name: boxName || "Custom Macaron Box",
       price: pricePerMacaron,
-      quantity: totalMacarons
+      quantity: totalMacarons,
+      shellColor: selectedShellColor,
+      fillingColor: selectedFillingColor
     });
     
     toast({
@@ -84,6 +97,9 @@ const CustomBox = () => {
     // Reset selections
     setSelectedFlavors({});
     setBoxName("My Custom Box");
+    // Reset colors to defaults
+    setSelectedShellColor({ name: "Pink", value: "#FFC0CB" });
+    setSelectedFillingColor({ name: "Vanilla Cream", value: "#FFFDD0" });
   };
 
   // Calculate if box qualifies for discount
@@ -121,12 +137,66 @@ const CustomBox = () => {
               className="w-full placeholder:text-gray-400"
             />
           </div>
+          
+          {/* Color customization section */}
+          <div className="max-w-md mx-auto mb-6">
+            <div className="flex items-center mb-2">
+              <Palette className="h-4 w-4 mr-2" />
+              <h3 className="font-medium">Customize Your Macarons</h3>
+            </div>
+            <p className="text-sm text-gray-500 mb-4">
+              Choose the colors for your macaron shells and fillings.
+            </p>
+            <MacaronColorPicker 
+              selectedShellColor={selectedShellColor}
+              selectedFillingColor={selectedFillingColor}
+              onShellColorSelect={setSelectedShellColor}
+              onFillingColorSelect={setSelectedFillingColor}
+            />
+            
+            {/* Macaron preview */}
+            <div className="mt-6 flex justify-center">
+              <motion.div 
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", bounce: 0.5 }}
+                className="relative"
+              >
+                <div 
+                  className="w-20 h-8 rounded-full" 
+                  style={{ backgroundColor: selectedShellColor.value }}
+                />
+                <div 
+                  className="w-20 h-8 rounded-full mt-2" 
+                  style={{ backgroundColor: selectedFillingColor.value }}
+                />
+                <div 
+                  className="w-20 h-8 rounded-full mt-2" 
+                  style={{ backgroundColor: selectedShellColor.value }}
+                />
+                <p className="text-xs text-center mt-2 font-medium">Preview</p>
+              </motion.div>
+            </div>
+          </div>
 
           <div className="bg-[hsl(var(--secondary-light))] p-4 rounded-lg max-w-md mx-auto">
             <div className="flex justify-between items-center mb-2">
               <h3 className="font-medium">Box Summary</h3>
               <div className="text-sm font-medium">
                 {totalMacarons} macarons selected
+              </div>
+            </div>
+            
+            {/* Display selected colors */}
+            <div className="mb-3 p-2 bg-white rounded-md">
+              <div className="text-sm font-medium mb-1">Custom Colors</div>
+              <div className="flex items-center space-x-2 mb-1">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedShellColor.value }}></div>
+                <span className="text-xs text-gray-700">Shell: {selectedShellColor.name}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedFillingColor.value }}></div>
+                <span className="text-xs text-gray-700">Filling: {selectedFillingColor.name}</span>
               </div>
             </div>
             

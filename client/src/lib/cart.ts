@@ -6,6 +6,8 @@ export interface CartItem {
   name: string;
   price: number; // in cents
   quantity: number;
+  shellColor?: { name: string; value: string };
+  fillingColor?: { name: string; value: string };
 }
 
 // Define the cart store type

@@ -59,11 +59,18 @@ export const insertOrderSchema = createInsertSchema(orders).omit({
   createdAt: true,
 });
 
+export const colorSchema = z.object({
+  name: z.string(),
+  value: z.string(),
+});
+
 export const orderItemSchema = z.object({
   flavorId: z.number(),
   name: z.string(),
   price: z.number(),
   quantity: z.number(),
+  shellColor: colorSchema.optional(),
+  fillingColor: colorSchema.optional(),
 });
 
 export type OrderItem = z.infer<typeof orderItemSchema>;
