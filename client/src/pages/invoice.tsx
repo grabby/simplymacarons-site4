@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Order } from "@shared/schema";
 import { useEffect } from "react";
 import { Printer, ChevronLeft, CheckCircle } from "lucide-react";
+import SEO from "@/components/SEO";
 
 // Enhanced Order type for TypeScript
 interface OrderItem {
@@ -36,12 +37,12 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
     enabled: !!orderNumber,
   });
 
-  // Set page title
-  useEffect(() => {
-    document.title = orderNumber 
-      ? `Order #${orderNumber} | Sweet Delights Macarons` 
-      : "Invoice | Sweet Delights Macarons";
-  }, [orderNumber]);
+  // SEO configuration
+  const seoTitle = orderNumber 
+    ? `Order #${orderNumber} | Simply Macarons` 
+    : "Order Invoice | Simply Macarons";
+  const seoDescription = "Thank you for your macaron order. Your invoice contains order details, payment information, and pickup/delivery instructions.";
+  const seoKeywords = "macaron order invoice, macaron receipt, order confirmation, simply macarons order, victoria bakery order";
 
   // Format pickup date and time
   const formatPickupDateTime = (date: string, time: string) => {
@@ -104,6 +105,11 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       <div className="max-w-3xl mx-auto">
         {/* Success message */}
         <div className="bg-green-50 p-6 rounded-xl text-center mb-8 print:hidden">
