@@ -3,13 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ChevronUp, ChevronDown } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import { Button } from '@/components/ui/button';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 const CartBanner = () => {
   const { items, getTotalPrice, getTotalItems } = useCart();
   const [isExpanded, setIsExpanded] = useState(false);
   const totalItems = getTotalItems();
   const totalPrice = getTotalPrice();
+  
+  // Get current location to hide banner on order page
+  const [location] = useLocation();
   
   // Format price to display in dollars
   const formatPrice = (price: number) => {
@@ -21,8 +24,8 @@ const CartBanner = () => {
   const macaronsToDiscount = Math.max(0, 50 - totalMacarons);
   const qualifiesForDiscount = totalMacarons >= 50;
   
-  // Hide banner when cart is empty
-  if (totalItems === 0) {
+  // Hide banner when cart is empty or on order page
+  if (totalItems === 0 || location === '/order') {
     return null;
   }
   
