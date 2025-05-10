@@ -18,6 +18,7 @@ import { Link } from "wouter";
 import { CalendarIcon, Store } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import OrderFormButton from "@/components/OrderFormButton";
 
 // Create a form schema based on the order schema
 const formSchema = createOrderSchema;
@@ -106,6 +107,7 @@ const Order = () => {
 
   return (
     <section className="py-12">
+      <OrderFormButton />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Place Your Order</h2>
@@ -219,7 +221,7 @@ const Order = () => {
           
           <div>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white p-6 rounded-xl shadow-md">
+              <form id="order-form" onSubmit={form.handleSubmit(onSubmit)} className="bg-white p-6 rounded-xl shadow-md">
                 <h3 className="font-display text-xl font-semibold mb-6">Customer Information</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
