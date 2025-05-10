@@ -11,6 +11,7 @@ import Invoice from "@/pages/invoice";
 import CustomBox from "@/pages/custom-box";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import CartBanner from "@/components/CartBanner";
 import { CartProvider } from "@/lib/cartContext";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { AnimatePresence, motion } from "framer-motion";
@@ -99,7 +100,7 @@ function Router() {
         <Route path="/invoice/:orderNumber">
           {(params) => (
             <PageWrapper>
-              <Invoice {...params} />
+              <Invoice orderNumber={params.orderNumber} />
             </PageWrapper>
           )}
         </Route>
@@ -126,6 +127,7 @@ function App() {
               <Router />
             </main>
             <Footer />
+            <CartBanner />
           </div>
         </CartProvider>
       </TooltipProvider>

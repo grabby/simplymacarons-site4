@@ -3,35 +3,35 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
-// Color options for macaron shells and fillings
+// Color options for macaron shells and fillings with Canadian spelling
 const shellColors = [
-  { name: "Pink", value: "#FFC0CB" },
-  { name: "Lavender", value: "#E6E6FA" },
-  { name: "Mint", value: "#98FB98" },
-  { name: "Vanilla", value: "#FFF8DC" },
-  { name: "Chocolate", value: "#8B4513" },
-  { name: "Lemon", value: "#FFFACD" },
-  { name: "Berry", value: "#C71585" },
+  { name: "Soft Pink", value: "#FFC0CB" },
+  { name: "Lavender Mist", value: "#E6E6FA" },
+  { name: "Mint Frost", value: "#98FB98" },
+  { name: "Ivory", value: "#FFF8DC" },
+  { name: "Mocha", value: "#8B4513" },
+  { name: "Lemon Zest", value: "#FFFACD" },
+  { name: "Raspberry", value: "#C71585" },
   { name: "Pistachio", value: "#93C572" },
-  { name: "Coffee", value: "#6F4E37" },
-  { name: "Orange", value: "#FFA500" },
-  { name: "Blue", value: "#ADD8E6" },
-  { name: "Red", value: "#FF6B6B" },
+  { name: "Hazelnut", value: "#6F4E37" },
+  { name: "Tangerine", value: "#FFA500" },
+  { name: "Sky Blue", value: "#ADD8E6" },
+  { name: "Crimson", value: "#FF6B6B" },
 ];
 
 const fillingColors = [
-  { name: "Vanilla Cream", value: "#FFFDD0" },
-  { name: "Chocolate Ganache", value: "#3C2218" },
-  { name: "Raspberry", value: "#E30B5C" },
-  { name: "Lemon Curd", value: "#FFF44F" },
-  { name: "Mint Buttercream", value: "#98FB98" },
-  { name: "Pistachio", value: "#93C572" },
-  { name: "Caramel", value: "#C19A6B" },
-  { name: "Coffee", value: "#6F4E37" },
-  { name: "Rose", value: "#FF66CC" },
-  { name: "Blueberry", value: "#4682B4" },
-  { name: "Orange", value: "#FFA500" },
-  { name: "Matcha", value: "#D0F0C0" },
+  { name: "Cream", value: "#FFFDD0" },
+  { name: "Dark Chocolate", value: "#3C2218" },
+  { name: "Berry", value: "#E30B5C" },
+  { name: "Sunshine Yellow", value: "#FFF44F" },
+  { name: "Seafoam", value: "#98FB98" },
+  { name: "Sage", value: "#93C572" },
+  { name: "Toffee", value: "#C19A6B" },
+  { name: "Espresso", value: "#6F4E37" },
+  { name: "Lilac", value: "#FF66CC" },
+  { name: "Periwinkle", value: "#4682B4" },
+  { name: "Apricot", value: "#FFA500" },
+  { name: "Jade", value: "#D0F0C0" },
 ];
 
 interface MacaronColorPickerProps {

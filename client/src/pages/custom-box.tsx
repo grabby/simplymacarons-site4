@@ -20,11 +20,11 @@ const CustomBox = () => {
   
   // State for macaron color customization
   const [selectedShellColor, setSelectedShellColor] = useState({ 
-    name: "Pink", 
+    name: "Soft Pink", 
     value: "#FFC0CB" 
   });
   const [selectedFillingColor, setSelectedFillingColor] = useState({ 
-    name: "Vanilla Cream", 
+    name: "Cream", 
     value: "#FFFDD0" 
   });
   
@@ -96,10 +96,10 @@ const CustomBox = () => {
 
     // Reset selections
     setSelectedFlavors({});
-    setBoxName("My Custom Box");
+    setBoxName("Custom Macaron Box");
     // Reset colors to defaults
-    setSelectedShellColor({ name: "Pink", value: "#FFC0CB" });
-    setSelectedFillingColor({ name: "Vanilla Cream", value: "#FFFDD0" });
+    setSelectedShellColor({ name: "Soft Pink", value: "#FFC0CB" });
+    setSelectedFillingColor({ name: "Cream", value: "#FFFDD0" });
   };
 
   // Calculate if box qualifies for discount
@@ -125,18 +125,6 @@ const CustomBox = () => {
 
         {/* Box customization area */}
         <div className="mb-8">
-          <div className="max-w-md mx-auto mb-6">
-            <label htmlFor="boxName" className="block mb-2 font-medium">
-              Name Your Box
-            </label>
-            <Input
-              id="boxName"
-              value={boxName}
-              onChange={(e) => setBoxName(e.target.value)}
-              placeholder="My Custom Box"
-              className="w-full placeholder:text-gray-400"
-            />
-          </div>
           
           {/* Color customization section */}
           <div className="max-w-md mx-auto mb-6">

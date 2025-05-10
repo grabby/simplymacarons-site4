@@ -7,8 +7,14 @@ import { Order } from "@shared/schema";
 import { useEffect } from "react";
 import { Printer, ChevronLeft, CheckCircle } from "lucide-react";
 
-const Invoice = () => {
-  const { orderNumber } = useParams();
+interface InvoiceProps {
+  orderNumber?: string;
+}
+
+const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
+  // Use either prop or param orderNumber
+  const params = useParams();
+  const orderNumber = propOrderNumber || params.orderNumber;
   
   // Fetch order details
   const { data: order, isLoading, error } = useQuery<Order>({
