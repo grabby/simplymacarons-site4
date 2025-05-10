@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useCart } from "@/lib/cartContext";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
-import { InfoIcon, CheckIcon, Minus, Plus } from "lucide-react";
+import { InfoIcon, CheckIcon, Minus, Plus, Star, Heart } from "lucide-react";
 import { Flavor } from "@shared/schema";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,15 @@ const Flavors = () => {
   const { toast } = useToast();
   const { addItem } = useCart();
   const [quantities, setQuantities] = useState<Record<number, number>>({});
+  
+  // Define which flavors are Top 5 and Kid Favourites
+  // We'll use the flavor ID to identify them
+  const topFiveFlavors = [1, 2, 3, 4, 5]; // IDs of top 5 flavors
+  const kidFavouriteFlavors = [2, 6, 7]; // IDs of kid favorite flavors
+  
+  // Helper functions to check if a flavor is in a special category
+  const isTopFive = (flavorId: number) => topFiveFlavors.includes(flavorId);
+  const isKidFavourite = (flavorId: number) => kidFavouriteFlavors.includes(flavorId);
   
   // Set page title
   useEffect(() => {
@@ -41,10 +50,13 @@ const Flavors = () => {
     // Get quantity for this flavor (default to 12 if not set)
     const quantity = quantities[flavor.id] || 12;
     
+    // Fixed price of $24.00 (2400 cents) for a box of 12, then regular price for additional
+    const boxPrice = 2400 / 12; // 200 cents per macaron
+    
     addItem({
       id: flavor.id,
-      name: flavor.name,
-      price: flavor.price, 
+      name: `${flavor.name} Box`,
+      price: boxPrice, 
       quantity
     });
     
@@ -56,8 +68,9 @@ const Flavors = () => {
     
     toast({
       title: "Added to cart",
-      description: `Added ${quantity} ${flavor.name} macarons to your cart`,
+      description: `Added ${flavor.name} Box (${quantity} macarons) to your cart`,
       variant: "default",
+      className: "bottom-0 right-0 absolute mb-20 mr-4",
     });
   };
 
@@ -96,16 +109,34 @@ const Flavors = () => {
                 transition={{ duration: 0.4 }}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <img 
-                  src={flavor.imageUrl} 
-                  alt={`${flavor.name} Macarons`} 
-                  className="w-full h-48 object-cover" 
-                />
+                <div className="relative">
+                  <img 
+                    src={flavor.imageUrl} 
+                    alt={`${flavor.name} Macarons`} 
+                    className="w-full h-48 object-cover" 
+                  />
+                  
+                  {/* Top 5 Ribbon */}
+                  {isTopFive(flavor.id) && (
+                    <div className="absolute top-0 right-0 bg-yellow-400 text-black font-bold py-1 px-3 transform rotate-0 shadow-md flex items-center">
+                      <Star className="h-3 w-3 mr-1 fill-current" /> 
+                      <span className="text-xs">Top 5</span>
+                    </div>
+                  )}
+                  
+                  {/* Kid Favourite Badge */}
+                  {isKidFavourite(flavor.id) && (
+                    <div className="absolute top-0 left-0 bg-pink-500 text-white font-bold py-1 px-3 rounded-br-lg shadow-md flex items-center">
+                      <Heart className="h-3 w-3 mr-1 fill-current" /> 
+                      <span className="text-xs">Kid Favourite!</span>
+                    </div>
+                  )}
+                </div>
                 
                 <div className="p-4">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-display text-xl font-semibold">{flavor.name}</h3>
-                    <span className="text-[hsl(var(--accent))] font-medium">${(flavor.price / 100).toFixed(2)}</span>
+                    <h3 className="font-display text-xl font-semibold">{flavor.name} Box</h3>
+                    <span className="text-[hsl(var(--accent))] font-medium">$24.00</span>
                   </div>
                   <p className="text-sm mb-4">{flavor.description}</p>
                   
@@ -141,7 +172,7 @@ const Flavors = () => {
                     onClick={() => handleAddToCart(flavor)}
                     className="w-full py-2 px-4 bg-[hsl(var(--primary-light))] hover:bg-[hsl(var(--primary))] text-[hsl(var(--accent))] font-medium rounded-md transition-colors"
                   >
-                    Add to Cart ({quantities[flavor.id] || 12})
+                    Add Box to Cart ({quantities[flavor.id] || 12})
                   </button>
                 </div>
               </motion.div>

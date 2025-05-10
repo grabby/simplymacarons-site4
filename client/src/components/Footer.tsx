@@ -7,25 +7,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-display text-xl font-semibold mb-4">Simply Macarons</h3>
-            <p className="text-white/80 text-sm">Handcrafted artisanal macarons made with love and premium ingredients in Victoria, BC.</p>
+            <p className="text-white/80 text-sm">Hand-crafted macarons made in Victoria, BC 🇨🇦</p>
           </div>
           
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
             <address className="not-italic text-white/80 text-sm">
               Victoria, BC, Canada<br />
-              <a href="tel:2508880000" className="hover:text-[hsl(var(--primary-light))] transition-colors">(250) 888-0000</a><br />
-              <a href="mailto:hello@simplymacarons.ca" className="hover:text-[hsl(var(--primary-light))] transition-colors">hello@simplymacarons.ca</a>
+              <a href="mailto:simplymacaronsyyj@gmail.com" className="hover:text-[hsl(var(--primary-light))] transition-colors">simplymacaronsyyj@gmail.com</a>
             </address>
           </div>
           
           <div>
-            <h4 className="font-display font-semibold mb-4">Hours</h4>
-            <ul className="text-white/80 text-sm">
-              <li>Tuesday - Friday: 10am - 6pm</li>
-              <li>Saturday: 9am - 4pm</li>
-              <li>Sunday - Monday: Closed</li>
-            </ul>
+            <h4 className="font-display font-semibold mb-4">Follow Us</h4>
+            <div className="flex flex-col space-y-2 text-white/80 text-sm">
+              <a href="https://www.instagram.com/simply_macarons_yyj/" target="_blank" rel="noopener noreferrer" className="hover:text-[hsl(var(--primary-light))] transition-colors">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61560268713262" target="_blank" rel="noopener noreferrer" className="hover:text-[hsl(var(--primary-light))] transition-colors">Facebook</a>
+            </div>
           </div>
         </div>
         
