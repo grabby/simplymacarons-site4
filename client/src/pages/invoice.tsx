@@ -7,6 +7,20 @@ import { Order } from "@shared/schema";
 import { useEffect } from "react";
 import { Printer, ChevronLeft, CheckCircle } from "lucide-react";
 
+// Enhanced Order type for TypeScript
+interface OrderItem {
+  name: string;
+  quantity: number;
+  price: number;
+  flavorId?: number;
+  shellColor?: { name: string; value: string };
+  fillingColor?: { name: string; value: string };
+}
+
+interface EnhancedOrder extends Order {
+  items: OrderItem[];
+}
+
 interface InvoiceProps {
   orderNumber?: string;
 }
@@ -17,7 +31,7 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
   const orderNumber = propOrderNumber || params.orderNumber;
   
   // Fetch order details
-  const { data: order, isLoading, error } = useQuery<Order>({
+  const { data: order, isLoading, error } = useQuery<EnhancedOrder>({
     queryKey: [`/api/orders/${orderNumber}`],
     enabled: !!orderNumber,
   });
@@ -147,7 +161,37 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
                   <tbody className="divide-y divide-gray-100">
                     {order.items.map((item, index) => (
                       <tr key={index}>
-                        <td className="px-4 py-3 text-left">{item.name}</td>
+                        <td className="px-4 py-3 text-left">
+                          <div>
+                            {item.name}
+                            {/* Display color info if available */}
+                            {(item.shellColor || item.fillingColor) && (
+                              <div className="flex items-center mt-1 space-x-2 text-xs text-gray-500">
+                                {item.shellColor && (
+                                  <div className="flex items-center">
+                                    <div 
+                                      className="w-3 h-3 rounded-full mr-1"
+                                      style={{ backgroundColor: item.shellColor.value }}
+                                    ></div>
+                                    <span>{item.shellColor.name}</span>
+                                  </div>
+                                )}
+                                {item.shellColor && item.fillingColor && (
+                                  <span>/</span>
+                                )}
+                                {item.fillingColor && (
+                                  <div className="flex items-center">
+                                    <div 
+                                      className="w-3 h-3 rounded-full mr-1"
+                                      style={{ backgroundColor: item.fillingColor.value }}
+                                    ></div>
+                                    <span>{item.fillingColor.name}</span>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </td>
                         <td className="px-4 py-3 text-center">{item.quantity}</td>
                         <td className="px-4 py-3 text-center">${(item.price / 100).toFixed(2)}</td>
                         <td className="px-4 py-3 text-right">${((item.price * item.quantity) / 100).toFixed(2)}</td>

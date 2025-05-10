@@ -6,20 +6,20 @@
 
 :root {
   --background: 30 33% 98%;
-  --foreground: 24 16% 46%;
+  --foreground: 24 16% 26%; /* Darker text for better contrast */
   --muted: 60 4.8% 95.9%;
-  --muted-foreground: 25 5.3% 44.7%;
+  --muted-foreground: 25 5.3% 34.7%; /* Darker muted text */
   --popover: 0 0% 100%;
-  --popover-foreground: 24 16% 46%;
+  --popover-foreground: 24 16% 26%; /* Darker popover text */
   --card: 0 0% 100%;
-  --card-foreground: 24 16% 46%;
+  --card-foreground: 24 16% 26%; /* Darker card text */
   --border: 20 5.9% 90%;
   --input: 20 5.9% 90%;
   --primary: 336 80% 90%;
-  --primary-foreground: 336 80% 40%;
+  --primary-foreground: 336 80% 30%; /* Darker primary text */
   --secondary: 20 60% 77%;
-  --secondary-foreground: 24 9.8% 10%;
-  --accent: 334 55% 62%;
+  --secondary-foreground: 24 9.8% 5%; /* Darker secondary text */
+  --accent: 334 55% 52%; /* Slightly darker accent for better contrast */
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
@@ -28,12 +28,12 @@
   
   /* Custom colors */
   --cream: 38 100% 98%;
-  --mocha: 22 12% 46%;
-  --mint: 124 26% 56%;
+  --mocha: 22 12% 36%; /* Darker for better contrast */
+  --mint: 124 26% 46%; /* Darker mint */
   --primary-light: 336 80% 95%;
   --secondary-light: 18 50% 88%;
-  --accent-light: 334 55% 80%;
-  --accent-dark: 334 55% 50%;
+  --accent-light: 334 55% 70%; /* Slightly darker */
+  --accent-dark: 334 55% 40%; /* Darker accent for better contrast */
   
   /* Chart colors */
   --chart-1: 336 80% 90%;
