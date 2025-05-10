@@ -82,14 +82,16 @@ export class MemStorage implements IStorage {
         description: "Nutty pistachio macaron with creamy pistachio buttercream",
         imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
-        available: true
+        available: true,
+        tags: ["Top 5"]
       },
       {
         name: "Lemon",
         description: "Tangy lemon macaron with zesty lemon curd filling",
         imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
-        available: true
+        available: true,
+        tags: ["Top 5"]
       },
       {
         name: "Hazelnut Chocolate",
@@ -110,7 +112,8 @@ export class MemStorage implements IStorage {
         description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
         imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
-        available: true
+        available: true,
+        tags: ["Top 5"]
       },
       {
         name: "Strawberry",
@@ -120,16 +123,40 @@ export class MemStorage implements IStorage {
         available: true
       },
       {
-        name: "Espresso",
-        description: "Rich espresso macaron with coffee-infused buttercream",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        name: "Cookies & Cream",
+        description: "Delicious cookies & cream macaron with creamy Oreo filling",
+        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
         price: 200,
-        available: true
+        available: true,
+        tags: ["Top 5"]
+      },
+      {
+        name: "Red Velvet",
+        description: "Rich red velvet macaron with cream cheese filling",
+        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true,
+        tags: ["Top 5"]
       },
       {
         name: "Matcha",
         description: "Japanese green tea macaron with matcha buttercream",
         imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true
+      },
+      {
+        name: "Fuzzy Peach",
+        description: "Sweet peach-flavored macaron with fuzzy peach filling",
+        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        price: 200,
+        available: true,
+        tags: ["Kid Favourite"]
+      },
+      {
+        name: "Crème Brûlée",
+        description: "Classic crème brûlée macaron with caramelized sugar top",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       }

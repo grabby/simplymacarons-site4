@@ -39,7 +39,7 @@ const NavBar = () => {
       {/* Small location bar */}
       <div className="bg-[hsl(var(--accent))] text-white text-xs py-1 text-center">
         <div className="container mx-auto px-4">
-          <span>Hand-crafted macarons made in Victoria, BC</span>
+          <span>Hand-crafted macarons made in Victoria, BC 🇨🇦</span>
         </div>
       </div>
       
