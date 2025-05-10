@@ -19,6 +19,7 @@ import { CalendarIcon, Store } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import OrderFormButton from "@/components/OrderFormButton";
+import SEO from "@/components/SEO";
 
 // Create a form schema based on the order schema
 const formSchema = createOrderSchema;
@@ -29,10 +30,10 @@ const Order = () => {
   const { items, getTotalPrice, getTotalItems, clearCart } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  // Set page title
-  useEffect(() => {
-    document.title = "Order Macarons | Sweet Delights";
-  }, []);
+  // SEO configuration
+  const seoTitle = "Order Macarons Online";
+  const seoDescription = "Order handcrafted macarons for pickup or delivery in Victoria, BC. Minimum 12 macarons per flavor, with bulk discounts available. 48 hours notice required.";
+  const seoKeywords = "order macarons online, victoria macaron delivery, custom macaron order, macaron bulk order, macaron box, simply macarons order form";
 
   // Track delivery option state
   const [deliveryOption, setDeliveryOption] = useState<"pickup" | "delivery">("pickup");

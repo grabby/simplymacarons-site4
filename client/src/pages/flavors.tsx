@@ -6,6 +6,7 @@ import { InfoIcon, CheckIcon, Minus, Plus, Star, Heart } from "lucide-react";
 import { Flavor } from "@shared/schema";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const Flavors = () => {
   const { toast } = useToast();
@@ -16,10 +17,9 @@ const Flavors = () => {
   const isTopFive = (flavor: Flavor) => flavor.tags?.includes("Top 5");
   const isKidFavourite = (flavor: Flavor) => flavor.tags?.includes("Kid Favourite");
   
-  // Set page title
-  useEffect(() => {
-    document.title = "Our Flavors | Simply Macarons";
-  }, []);
+  const seoTitle = "Delicious Macaron Flavors";
+  const seoDescription = "Explore our premium macaron flavors crafted in Victoria, BC. From Earl Grey and Pistachio to Crème Brûlée and Fuzzy Peach, find your perfect treat. Minimum order of 12 per flavor.";
+  const seoKeywords = "macaron flavors, earl grey macaron, pistachio macaron, crème brûlée macaron, fuzzy peach macaron, victoria macarons, custom macarons, premium macarons, top macaron flavors, kid favorite macarons";
 
   // Fetch flavors from the server
   const { data: flavors, isLoading, error } = useQuery<Flavor[]>({
@@ -71,6 +71,12 @@ const Flavors = () => {
 
   return (
     <section className="py-12 bg-[hsl(var(--primary-light))]">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        ogImage="/attached_assets/cremebrulee.png"
+      />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Our Delicious Flavors</h2>

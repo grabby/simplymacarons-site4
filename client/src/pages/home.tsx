@@ -1,16 +1,21 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { Cookie, Truck, Heart } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Home = () => {
-  // Set page title 
-  useEffect(() => {
-    document.title = "Sweet Delights Macarons | Artisanal Handcrafted Macarons";
-  }, []);
+  const seoKeywords = "macarons victoria bc, artisanal macarons, handcrafted macarons, macaron delivery, custom macaron box, macaron flavors, french macarons, victoria bakery, premium macarons, earl grey macaron, wedding macarons";
+  const seoDescription = "Hand-crafted, artisanal macarons made in Victoria, BC 🇨🇦. Simply Macarons offers premium flavors including Earl Grey, Pistachio, and Crème Brûlée, with custom boxes available for special occasions. Starting at $24 per dozen.";
+  
 
   return (
     <div>
+      <SEO 
+        title="Handcrafted Macarons in Victoria BC" 
+        description={seoDescription}
+        keywords={seoKeywords}
+        ogImage="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg"
+      />
       {/* Hero Section */}
       <section className="pt-6 lg:pt-10">
         <div className="container mx-auto px-4">
