@@ -1,13 +1,19 @@
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 const About = () => {
-  // Set page title
-  useEffect(() => {
-    document.title = "About Us | Sweet Delights Macarons";
-  }, []);
+  // SEO configuration
+  const seoTitle = "About Simply Macarons - Victoria BC";
+  const seoDescription = "Simply Macarons is a home-based artisanal macaron bakery in Victoria, BC. Learn about our passion for creating perfect handcrafted macarons with premium ingredients and traditional techniques.";
+  const seoKeywords = "about simply macarons, victoria macaron bakery, handcrafted macarons, artisanal macarons, local bakery victoria bc, macaron maker, macaron process";
 
   return (
     <section className="py-12 bg-[hsl(var(--primary-light))]">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">About Sweet Delights</h2>

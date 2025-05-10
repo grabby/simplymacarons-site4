@@ -108,6 +108,11 @@ const Order = () => {
 
   return (
     <section className="py-12">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       <OrderFormButton />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">

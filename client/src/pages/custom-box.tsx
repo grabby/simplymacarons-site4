@@ -10,6 +10,7 @@ import { Loader2, Plus, Minus, ShoppingBag, Sparkles, Palette } from "lucide-rea
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import MacaronColorPicker from "@/components/MacaronColorPicker";
+import SEO from "@/components/SEO";
 
 const CustomBox = () => {
   const { toast } = useToast();
@@ -28,10 +29,10 @@ const CustomBox = () => {
     value: "#FFFDD0" 
   });
   
-  // Set page title
-  useEffect(() => {
-    document.title = "Design Your Own Box | Simply Macarons";
-  }, []);
+  // SEO configuration
+  const seoTitle = "Design Your Custom Macaron Box";
+  const seoDescription = "Create your personalized macaron box with customizable flavors and colors. Mix and match flavors, choose your shell and filling colors for a truly unique treat. Perfect for gifts and special occasions.";
+  const seoKeywords = "custom macaron box, design your own macarons, personalized macarons, colored macarons, macaron gift box, custom macaron colors, macaron shells, macaron fillings, victoria custom desserts";
 
   // Fetch flavors
   const { data: flavors, isLoading, error } = useQuery<Flavor[]>({
@@ -114,6 +115,11 @@ const CustomBox = () => {
 
   return (
     <section className="py-12">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Design Your Own Macaron Box</h2>
