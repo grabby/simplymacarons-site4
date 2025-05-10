@@ -12,14 +12,9 @@ const Flavors = () => {
   const { addItem } = useCart();
   const [quantities, setQuantities] = useState<Record<number, number>>({});
   
-  // Define which flavors are Top 5 and Kid Favourites
-  // We'll use the flavor ID to identify them
-  const topFiveFlavors = [1, 2, 3, 4, 5]; // IDs of top 5 flavors
-  const kidFavouriteFlavors = [2, 6, 7]; // IDs of kid favorite flavors
-  
   // Helper functions to check if a flavor is in a special category
-  const isTopFive = (flavorId: number) => topFiveFlavors.includes(flavorId);
-  const isKidFavourite = (flavorId: number) => kidFavouriteFlavors.includes(flavorId);
+  const isTopFive = (flavor: Flavor) => flavor.tags?.includes("Top 5");
+  const isKidFavourite = (flavor: Flavor) => flavor.tags?.includes("Kid Favourite");
   
   // Set page title
   useEffect(() => {
@@ -117,7 +112,7 @@ const Flavors = () => {
                   />
                   
                   {/* Top 5 Ribbon */}
-                  {isTopFive(flavor.id) && (
+                  {isTopFive(flavor) && (
                     <div className="absolute top-0 right-0 bg-yellow-400 text-black font-bold py-1 px-3 transform rotate-0 shadow-md flex items-center">
                       <Star className="h-3 w-3 mr-1 fill-current" /> 
                       <span className="text-xs">Top 5</span>
@@ -125,7 +120,7 @@ const Flavors = () => {
                   )}
                   
                   {/* Kid Favourite Badge */}
-                  {isKidFavourite(flavor.id) && (
+                  {isKidFavourite(flavor) && (
                     <div className="absolute top-0 left-0 bg-pink-500 text-white font-bold py-1 px-3 rounded-br-lg shadow-md flex items-center">
                       <Heart className="h-3 w-3 mr-1 fill-current" /> 
                       <span className="text-xs">Kid Favourite!</span>
@@ -170,7 +165,7 @@ const Flavors = () => {
                   
                   <button 
                     onClick={() => handleAddToCart(flavor)}
-                    className="w-full py-2 px-4 bg-[hsl(var(--primary-light))] hover:bg-[hsl(var(--primary))] text-[hsl(var(--accent))] font-medium rounded-md transition-colors"
+                    className="w-full py-2 px-4 bg-[hsl(var(--primary-light))] hover:bg-[hsl(var(--accent-dark))] hover:text-white text-[hsl(var(--accent))] font-medium rounded-md transition-colors"
                   >
                     Add Box to Cart ({quantities[flavor.id] || 12})
                   </button>

@@ -25,6 +25,7 @@ export const flavors = pgTable("flavors", {
   imageUrl: text("image_url").notNull(),
   price: integer("price").notNull(), // in cents
   available: boolean("available").notNull().default(true),
+  tags: text("tags").array().default([]),
 });
 
 export const insertFlavorSchema = createInsertSchema(flavors).pick({
@@ -33,6 +34,7 @@ export const insertFlavorSchema = createInsertSchema(flavors).pick({
   imageUrl: true,
   price: true,
   available: true,
+  tags: true,
 });
 
 export type InsertFlavor = z.infer<typeof insertFlavorSchema>;
