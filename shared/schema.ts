@@ -17,7 +17,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 
-// Macaron flavor schema
+// Macaron flavour schema
 export const flavors = pgTable("flavors", {
   id: serial("id").primaryKey(),
   name: text("name").notNull().unique(),
@@ -67,7 +67,8 @@ export const colorSchema = z.object({
 });
 
 export const orderItemSchema = z.object({
-  flavorId: z.number(),
+  flavorId: z.number().optional(), // Keep for backward compatibility
+  flavourId: z.number().optional(),
   name: z.string(),
   price: z.number(),
   quantity: z.number(),

@@ -86,8 +86,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Minimum order quantity is 12 macarons" });
       }
       
+      // Make sure we replace any instances of "flavor" with "flavour" in item names
+      const itemsWithCanadianSpelling = orderData.items.map(item => ({
+        ...item,
+        name: item.name.replace(/flavor/gi, "flavour")
+      }));
+      
       // Calculate order total
-      const total = orderData.items.reduce(
+      const total = itemsWithCanadianSpelling.reduce(
         (sum, item) => sum + (item.price * item.quantity), 
         0
       );
@@ -105,7 +111,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         pickupDate: orderData.pickupDate || "",
         pickupTime: orderData.pickupTime || "",
         specialInstructions: orderData.specialInstructions,
-        items: orderData.items,
+        items: itemsWithCanadianSpelling,
         total
       });
       
@@ -114,7 +120,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Type assertion needed because storage returns items as unknown type
       const orderWithItems = {
         ...newOrder,
-        items: orderData.items
+        items: itemsWithCanadianSpelling
       };
       
       sendOrderEmails(orderWithItems as any).catch(err => {

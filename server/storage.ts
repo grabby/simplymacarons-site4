@@ -225,7 +225,14 @@ export class MemStorage implements IStorage {
   // Orders
   async createOrder(insertOrder: InsertOrder): Promise<Order> {
     const id = this.orderCurrentId++;
-    const order: Order = { ...insertOrder, id };
+    const order: Order = { 
+      ...insertOrder, 
+      id,
+      pickupDate: insertOrder.pickupDate || null,
+      pickupTime: insertOrder.pickupTime || null,
+      specialInstructions: insertOrder.specialInstructions || null,
+      createdAt: new Date()
+    };
     this.ordersMap.set(id, order);
     return order;
   }

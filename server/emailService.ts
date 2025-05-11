@@ -14,7 +14,8 @@ export interface OrderItem {
   name: string;
   quantity: number;
   price: number;
-  flavorId?: number;
+  flavorId?: number; // Keep for backward compatibility
+  flavourId?: number;
   shellColor?: { name: string; value: string };
   fillingColor?: { name: string; value: string };
 }
