@@ -77,8 +77,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         pickupTime: orderData.pickupTime,
         specialInstructions: orderData.specialInstructions,
         items: orderData.items,
-        total,
-        createdAt: new Date()
+        total
+      });
+      
+      // Send order confirmation emails
+      // We don't await this to avoid delaying the response to the client
+      // Type assertion needed because storage returns items as unknown type
+      const orderWithItems = {
+        ...newOrder,
+        items: orderData.items
+      };
+      
+      sendOrderEmails(orderWithItems as any).catch(err => {
+        console.error("Error sending order emails:", err);
       });
       
       res.status(201).json(newOrder);

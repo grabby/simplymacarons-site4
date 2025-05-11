@@ -125,7 +125,7 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
           <CardContent className="p-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 pb-6 border-b border-gray-100">
               <div>
-                <h1 className="font-display text-2xl font-bold">Sweet Delights</h1>
+                <h1 className="font-display text-2xl font-bold">Simply Macarons</h1>
                 <p className="text-sm text-gray-500">Order Confirmation & Invoice</p>
               </div>
               <div className="mt-4 sm:mt-0 print:hidden">
@@ -223,9 +223,9 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
             
             <div className="bg-[hsl(var(--primary-light))] p-4 rounded-lg text-sm">
               <h3 className="font-medium mb-2">Pickup Information</h3>
-              <p className="mb-1">Sweet Delights Bakery</p>
-              <p className="mb-1">123 Main Street, Macaron City, MC 12345</p>
-              <p>(555) 123-4567</p>
+              <p className="mb-1">Simply Macarons</p>
+              <p className="mb-1">Victoria, BC 🇨🇦</p>
+              <p className="mb-1">Payment due upon pickup via cash, e-transfer, or credit card</p>
             </div>
           </CardContent>
         </Card>
