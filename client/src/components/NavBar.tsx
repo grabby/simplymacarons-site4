@@ -35,7 +35,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-[hsl(var(--cream))] transition-shadow duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
+    <header className={`sticky top-0 z-50 bg-[hsl(var(--navbar))] transition-shadow duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
       {/* Small location bar */}
       <div className="bg-[hsl(var(--accent))] text-white text-xs py-1 text-center">
         <div className="container mx-auto px-4">
@@ -91,7 +91,7 @@ const NavBar = () => {
       
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="px-4 py-3 shadow-inner bg-[hsl(var(--cream))] md:hidden">
+        <div className="px-4 py-3 shadow-inner bg-[hsl(var(--navbar))] md:hidden">
           <div className="flex items-center mb-4">
             <img 
               src="https://raw.githubusercontent.com/grabby/simplymacarons/main/assets/images/simply-macarons-logo.jpg" 
