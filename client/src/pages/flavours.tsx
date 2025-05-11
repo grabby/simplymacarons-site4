@@ -112,9 +112,13 @@ const Flavors = () => {
               >
                 <div className="relative">
                   <img 
-                    src={flavor.imageUrl} 
+                    src={flavor.imageUrl.replace('/attached_assets/', '/assets/')} 
                     alt={`${flavor.name} Macarons`} 
                     className="w-full h-48 object-cover" 
+                    onError={(e) => {
+                      // Fallback if the image fails to load
+                      e.currentTarget.src = '/assets/cremebrulee.png';
+                    }}
                   />
                   
                   {/* Top 5 Ribbon */}
