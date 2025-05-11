@@ -91,7 +91,7 @@ const NavBar = () => {
       
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="px-4 py-3 shadow-inner bg-[hsl(var(--primary-light))] md:hidden">
+        <div className="px-4 py-3 shadow-inner bg-[hsl(var(--cream))] md:hidden">
           <div className="flex items-center mb-4">
             <img 
               src="https://raw.githubusercontent.com/grabby/simplymacarons/main/assets/images/simply-macarons-logo.jpg" 
