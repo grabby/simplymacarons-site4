@@ -53,9 +53,9 @@ const NavBar = () => {
             className={`font-medium hover:text-[hsl(var(--accent))] transition-colors ${location === '/' ? 'text-[hsl(var(--accent))]' : ''}`}>
             Home
           </Link>
-          <Link to="/flavors" 
-            className={`font-medium hover:text-[hsl(var(--accent))] transition-colors ${location === '/flavors' ? 'text-[hsl(var(--accent))]' : ''}`}>
-            Flavors
+          <Link to="/flavours" 
+            className={`font-medium hover:text-[hsl(var(--accent))] transition-colors ${location === '/flavours' ? 'text-[hsl(var(--accent))]' : ''}`}>
+            Flavours
           </Link>
 
           <Link to="/order" 
@@ -92,9 +92,9 @@ const NavBar = () => {
               className={`font-medium hover:text-[hsl(var(--accent))] transition-colors py-2 ${location === '/' ? 'text-[hsl(var(--accent))]' : ''}`}>
               Home
             </Link>
-            <Link to="/flavors" onClick={() => setMobileMenuOpen(false)} 
-              className={`font-medium hover:text-[hsl(var(--accent))] transition-colors py-2 ${location === '/flavors' ? 'text-[hsl(var(--accent))]' : ''}`}>
-              Flavors
+            <Link to="/flavours" onClick={() => setMobileMenuOpen(false)} 
+              className={`font-medium hover:text-[hsl(var(--accent))] transition-colors py-2 ${location === '/flavours' ? 'text-[hsl(var(--accent))]' : ''}`}>
+              Flavours
             </Link>
 
             <Link to="/order" onClick={() => setMobileMenuOpen(false)} 

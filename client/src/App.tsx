@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
-import Flavors from "@/pages/flavors";
+import Flavours from "@/pages/flavours";
 import Order from "@/pages/order";
 import About from "@/pages/about";
 import Invoice from "@/pages/invoice";
@@ -68,10 +68,10 @@ function Router() {
             </PageWrapper>
           )}
         </Route>
-        <Route path="/flavors">
+        <Route path="/flavours">
           {(params) => (
             <PageWrapper>
-              <Flavors />
+              <Flavours />
             </PageWrapper>
           )}
         </Route>
