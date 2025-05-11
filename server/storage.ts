@@ -52,35 +52,35 @@ export class MemStorage implements IStorage {
       {
         name: "Vanilla",
         description: "Classic vanilla macaron with smooth vanilla buttercream filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200, // $2.00
         available: true
       },
       {
         name: "Chocolate",
         description: "Rich chocolate macaron with dark chocolate ganache",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Salted Caramel",
         description: "Sweet and salty caramel macaron with decadent caramel filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Raspberry",
         description: "Vibrant raspberry macaron with raspberry jam filling",
-        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Pistachio",
         description: "Nutty pistachio macaron with creamy pistachio buttercream",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -88,7 +88,7 @@ export class MemStorage implements IStorage {
       {
         name: "Lemon",
         description: "Tangy lemon macaron with zesty lemon curd filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -96,21 +96,21 @@ export class MemStorage implements IStorage {
       {
         name: "Hazelnut Chocolate",
         description: "Hazelnut-infused macaron with chocolate hazelnut filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Coffee",
         description: "Bold coffee macaron with espresso buttercream",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Earl Grey",
         description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -118,14 +118,14 @@ export class MemStorage implements IStorage {
       {
         name: "Strawberry",
         description: "Sweet strawberry macaron with strawberry jam filling",
-        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Cookies & Cream",
         description: "Delicious cookies & cream macaron with creamy Oreo filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -133,7 +133,7 @@ export class MemStorage implements IStorage {
       {
         name: "Red Velvet",
         description: "Rich red velvet macaron with cream cheese filling",
-        imageUrl: "https://images.unsplash.com/photo-1558326567-98ae2405596b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -141,14 +141,14 @@ export class MemStorage implements IStorage {
       {
         name: "Matcha",
         description: "Japanese green tea macaron with matcha buttercream",
-        imageUrl: "https://images.unsplash.com/photo-1552848031-326ec03fe2ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true
       },
       {
         name: "Fuzzy Peach",
         description: "Sweet peach-flavored macaron with fuzzy peach filling",
-        imageUrl: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80",
+        imageUrl: "/attached_assets/cremebrulee.png",
         price: 200,
         available: true,
         tags: ["Kid Favourite"]
