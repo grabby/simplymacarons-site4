@@ -8,7 +8,7 @@ if (!process.env.RESEND_API_KEY) {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const BUSINESS_EMAIL = 'simplymacaronsyyj@gmail.com';
-const FROM_EMAIL = 'orders@simplymacarons.ca'; // This should be verified in your Resend account
+const FROM_EMAIL = 'onboarding@resend.dev'; // Default Resend sender - no verification needed
 
 export interface OrderItem {
   name: string;
@@ -270,11 +270,20 @@ export async function sendOrderEmails(order: EnhancedOrder): Promise<void> {
       console.warn("Skipping email sending: RESEND_API_KEY is not set");
       return;
     }
+    
+    console.log(`Starting to send emails for order #${order.orderNumber} to ${order.email}`);
+    
+    // Add basic validation for email addresses
+    if (!order.email || !order.email.includes('@')) {
+      console.error(`Invalid customer email address: ${order.email}`);
+      return;
+    }
 
     // Send email to customer
     await resend.emails.send({
       from: FROM_EMAIL,
       to: order.email,
+      replyTo: BUSINESS_EMAIL,
       subject: `Your Simply Macarons Order #${order.orderNumber}`,
       html: generateCustomerEmail(order)
     });
@@ -283,6 +292,7 @@ export async function sendOrderEmails(order: EnhancedOrder): Promise<void> {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: BUSINESS_EMAIL,
+      replyTo: order.email,
       subject: `New Order #${order.orderNumber} - Simply Macarons`,
       html: generateBusinessEmail(order)
     });
