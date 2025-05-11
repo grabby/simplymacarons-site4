@@ -146,7 +146,7 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
               <div>
                 <h3 className="font-semibold text-sm text-gray-500 mb-2">ORDER INFORMATION</h3>
                 <p className="mb-1"><span className="font-medium">Order Number:</span> {order.orderNumber}</p>
-                <p className="mb-1"><span className="font-medium">Order Date:</span> {format(new Date(order.createdAt), "PPP")}</p>
+                <p className="mb-1"><span className="font-medium">Order Date:</span> {new Date(order.createdAt).toLocaleDateString()}</p>
                 <p><span className="font-medium">Pickup Date:</span> {formatPickupDateTime(order.pickupDate, order.pickupTime)}</p>
               </div>
               
