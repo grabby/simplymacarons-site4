@@ -1,55 +1,37 @@
 # Simply Macarons Website
 
-A beautiful e-commerce website for Simply Macarons featuring:
-- Responsive design with mobile-first approach
-- Comprehensive product catalog with real macaron images
-- Cart functionality with quantity controls
-- Order form with delivery options
-- Email notifications using Resend
-- Canadian English localization support
+This is the static website for Simply Macarons, a home-based macaron business located in Victoria, BC, Canada.
 
-## Development
+## Features
 
-To start the development server:
-
-```bash
-npm run dev
-```
-
-## Deployment to GitHub Pages
-
-This project is configured to deploy automatically to GitHub Pages using GitHub Actions. Here's how it works:
-
-1. Push your changes to the `main` branch
-2. GitHub Actions will automatically build the site and deploy it to the `gh-pages` branch
-3. GitHub Pages will serve the content from the `gh-pages` branch
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. The built files will be in the `dist/public` directory.
-
-3. You can then deploy these files to any static hosting service.
-
-## Custom Domain
-
-The website is configured to use the custom domain `simplymacarons.ca`. If you need to change this:
-
-1. Update the `CNAME` file in the `client/public` directory
-2. Update all references to the domain in meta tags in `client/index.html`
+- Product catalog with detailed macaron flavour descriptions
+- Shopping cart functionality
+- Order placement system
+- Responsive design for mobile and desktop
+- Custom order confirmation page
 
 ## Technologies Used
 
-- React.js + TypeScript
-- Vite for building
-- Tailwind CSS for styling
-- Resend for email service
-- Wouter for routing
-- React Query for data fetching
-- Framer Motion for animations
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Local Storage for cart and order persistence
+
+## Deployment
+
+This site is deployed using GitHub Pages and is accessible at [simplymacarons.ca](https://simplymacarons.ca).
+
+## Development
+
+This is a static website with no build process required. To run it locally, simply open the `index.html` file in a web browser.
+
+## Contact
+
+For inquiries about the business, please contact:
+- Email: simplymacaronsyyj@gmail.com
+- Instagram: [@simply_macarons_yyj](https://www.instagram.com/simply_macarons_yyj/)
+- Facebook: [Simply Macarons](https://www.facebook.com/profile.php?id=61560268713262)
+
+## License
+
+Copyright © 2025 Simply Macarons. All rights reserved.

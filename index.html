@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simply Macarons - Handcrafted macarons in Victoria, BC. Order our delicious macarons with various flavours including dairy-free and gluten-free options.">
+  <meta name="keywords" content="macarons, Victoria BC, handcrafted, french pastry, gluten-free, dairy-free">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simplymacarons.ca/">
+  <meta property="og:title" content="Simply Macarons - Handcrafted in Victoria, BC">
+  <meta property="og:description" content="Delicious, handcrafted macarons in Victoria, BC. Order now for pick-up or delivery!">
+  <meta property="og:image" content="assets/cremebrulee.png">
+  
+  <title>Simply Macarons - Handcrafted in Victoria, BC</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/image_1746926444734.png" alt="Simply Macarons Logo" class="logo">
+        </a>
+      </div>
+      
+      <nav class="nav">
+        <button id="mobile-menu-button" class="mobile-menu-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        
+        <ul id="nav-links" class="nav-links">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active" data-page="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="flavours.html" class="nav-link" data-page="flavours">Flavours</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link" data-page="about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main content -->
+  <main id="page-container">
+    <!-- Content will be loaded via JavaScript -->
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-section">
+        <h3 class="footer-title">Simply Macarons</h3>
+        <p>Handcrafted macarons in Victoria, BC 🇨🇦</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="index.html">Home</a></li>
+          <li class="footer-link"><a href="flavours.html">Flavours</a></li>
+          <li class="footer-link"><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Contact</h3>
+        <p><a href="mailto:simplymacaronsyyj@gmail.com">simplymacaronsyyj@gmail.com</a></p>
+        <p>Victoria, BC</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Follow Us</h3>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/simply_macarons_yyj/" target="_blank" class="footer-social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61560268713262" target="_blank" class="footer-social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Simply Macarons. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Cart Banner -->
+  <div id="cart-banner" class="cart-banner" style="display: none;">
+    <div class="cart-summary">
+      <div id="cart-count" class="cart-count">0</div>
+      <span>Total: <span id="cart-total">$0.00</span></span>
+    </div>
+    <button class="button button-primary" onclick="cart.openCart()">View Cart</button>
+  </div>
+  
+  <!-- Cart Container -->
+  <div id="cart-container" class="cart-container">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" onclick="cart.closeCart()">×</button>
+    </div>
+    
+    <div id="cart-items" class="cart-items"></div>
+    
+    <div id="cart-empty" class="cart-empty">
+      <p>Your cart is empty</p>
+      <a href="flavours.html" class="button button-outline" onclick="cart.closeCart(); loadPage('flavours'); return false;">View Flavours</a>
+    </div>
+    
+    <div class="cart-footer">
+      <div id="cart-discount-message" class="cart-discount" style="display: none; margin-bottom: 0.5rem; font-size: 0.875rem; color: #10b981; text-align: center;"></div>
+      
+      <div class="cart-total-label">
+        <span>Total:</span>
+        <span id="cart-checkout-total">$0.00</span>
+      </div>
+      
+      <div class="cart-actions">
+        <button id="checkout-button" class="button button-primary" onclick="cart.closeCart(); loadPage('order');">Checkout</button>
+        <button class="button button-outline" onclick="cart.clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Toast container (for notifications) -->
+  <div id="toast-container"></div>
+  
+  <!-- CNAME for GitHub Pages -->
+  <script>window.CNAME = "simplymacarons.ca";</script>
+  
+  <!-- Email Service Script -->
+  <script src="js/email-service.js"></script>
+  
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
