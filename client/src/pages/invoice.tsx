@@ -45,18 +45,23 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
   const seoKeywords = "macaron order invoice, macaron receipt, order confirmation, simply macarons order, victoria bakery order";
 
   // Format pickup date and time
-  const formatPickupDateTime = (date: string, time: string) => {
-    if (!date || !time) return "N/A";
+  const formatPickupDateTime = (date?: string, time?: string) => {
+    if (!date || !time) return "To be arranged via email";
     
-    const formattedDate = format(new Date(date), "PPPP");
-    
-    // Convert from 24-hour to 12-hour format
-    const hour = parseInt(time.split(':')[0], 10);
-    const minute = time.split(':')[1] || "00";
-    const ampm = hour >= 12 ? "PM" : "AM";
-    const formattedHour = hour % 12 || 12;
-    
-    return `${formattedDate} at ${formattedHour}:${minute} ${ampm}`;
+    try {
+      const formattedDate = format(new Date(date), "PPPP");
+      
+      // Convert from 24-hour to 12-hour format
+      const hour = parseInt(time.split(':')[0], 10);
+      const minute = time.split(':')[1] || "00";
+      const ampm = hour >= 12 ? "PM" : "AM";
+      const formattedHour = hour % 12 || 12;
+      
+      return `${formattedDate} at ${formattedHour}:${minute} ${ampm}`;
+    } catch (error) {
+      console.error("Error formatting pickup date:", error);
+      return "To be arranged via email";
+    }
   };
 
   // Print invoice

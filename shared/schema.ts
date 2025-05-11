@@ -48,8 +48,8 @@ export const orders = pgTable("orders", {
   lastName: text("last_name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
-  pickupDate: text("pickup_date").notNull(),
-  pickupTime: text("pickup_time").notNull(),
+  pickupDate: text("pickup_date"),
+  pickupTime: text("pickup_time"),
   specialInstructions: text("special_instructions"),
   items: jsonb("items").notNull(),
   total: integer("total").notNull(), // in cents

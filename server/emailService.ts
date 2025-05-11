@@ -172,11 +172,10 @@ function generateCustomerEmail(order: EnhancedOrder): string {
         
         <div class="section">
           <h2>Pickup Details</h2>
-          <p><strong>Pickup Date:</strong> ${formatPickupDateTime(order.pickupDate, order.pickupTime)}</p>
-          
           <div class="pickup-info">
             <p><strong>Simply Macarons</strong></p>
             <p>Victoria, BC 🇨🇦</p>
+            <p>We will contact you via email to arrange a convenient pickup date and time.</p>
             <p>Payment due upon pickup via cash, e-transfer, or credit card</p>
           </div>
         </div>
@@ -233,7 +232,7 @@ function generateBusinessEmail(order: EnhancedOrder): string {
           <h2>Order Details</h2>
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
           <p><strong>Order Date:</strong> ${formatOrderDate(order.createdAt)}</p>
-          <p><strong>Pickup Date:</strong> ${formatPickupDateTime(order.pickupDate, order.pickupTime)}</p>
+          <p><strong>Pickup Date:</strong> To be arranged via email</p>
           
           <h2>Customer Information</h2>
           <div class="customer-info">
