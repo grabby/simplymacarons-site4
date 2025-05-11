@@ -165,7 +165,7 @@ function generateCustomerEmail(order: EnhancedOrder): string {
         <div class="section">
           <h2>Order Summary</h2>
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
-          <p><strong>Order Date:</strong> ${format(new Date(order.createdAt), "PPP")}</p>
+          <p><strong>Order Date:</strong> ${formatOrderDate(order.createdAt)}</p>
           
           ${generateItemsTable(order)}
         </div>
@@ -232,7 +232,7 @@ function generateBusinessEmail(order: EnhancedOrder): string {
         <div class="section">
           <h2>Order Details</h2>
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
-          <p><strong>Order Date:</strong> ${format(new Date(order.createdAt), "PPP")}</p>
+          <p><strong>Order Date:</strong> ${formatOrderDate(order.createdAt)}</p>
           <p><strong>Pickup Date:</strong> ${formatPickupDateTime(order.pickupDate, order.pickupTime)}</p>
           
           <h2>Customer Information</h2>
