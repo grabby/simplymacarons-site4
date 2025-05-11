@@ -75,6 +75,16 @@ function Router() {
             </PageWrapper>
           )}
         </Route>
+        
+        {/* Redirect from American to Canadian spelling */}
+        <Route path="/flavors">
+          {() => {
+            setTimeout(() => {
+              window.location.href = "/flavours";
+            }, 0);
+            return <div className="container mx-auto py-20 text-center">Redirecting to Flavours page...</div>;
+          }}
+        </Route>
 
         <Route path="/order">
           {(params) => (
