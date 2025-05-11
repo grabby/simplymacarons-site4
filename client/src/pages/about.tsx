@@ -16,24 +16,16 @@ const About = () => {
       />
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">About Sweet Delights</h2>
-          <p className="max-w-2xl mx-auto">Our story, our passion, and our commitment to creating the perfect macaron experience.</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">About Simply Macarons</h2>
+          <p className="max-w-2xl mx-auto">Handcrafted with care in Victoria, BC 🇨🇦</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
-          <div>
-            <h3 className="font-display text-2xl font-semibold mb-4">Our Sweet Story</h3>
-            <p className="mb-4">Sweet Delights began as a labor of love in a small kitchen, with a passion for creating the perfect macaron. What started as a hobby quickly blossomed into a thriving local business as word spread about our delicate, flavorful treats.</p>
-            <p>Today, we continue to handcraft each macaron with the same care and attention to detail, using only the finest ingredients and traditional techniques to ensure that every bite is a moment of pure joy.</p>
-          </div>
-          
-          <div>
-            <img 
-              src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
-              alt="Our bakery interior" 
-              className="rounded-xl shadow-lg w-full h-auto" 
-            />
-          </div>
+        <div className="mb-12 text-center">
+          <img 
+            src="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg" 
+            alt="Assorted colorful macarons" 
+            className="rounded-xl shadow-lg max-w-lg mx-auto h-auto" 
+          />
         </div>
         
         <div className="bg-white p-6 rounded-xl shadow-md">
@@ -52,7 +44,7 @@ const About = () => {
             
             <div>
               <h4 className="font-display text-lg font-semibold mb-2">Do you offer delivery?</h4>
-              <p className="text-sm">Currently, we offer pickup only at our bakery location. We're working on adding delivery options in the future.</p>
+              <p className="text-sm">Yes, we offer local delivery in Victoria for an additional fee starting at $20, which varies by distance.</p>
             </div>
             
             <div>
