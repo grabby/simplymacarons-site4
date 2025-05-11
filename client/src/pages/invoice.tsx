@@ -118,6 +118,7 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
           </div>
           <h3 className="font-display text-2xl font-bold">Order Confirmed!</h3>
           <p className="text-gray-600 mt-2">Your order has been received and is being processed.</p>
+          <p className="text-gray-600 mt-2">An order confirmation has been sent to your email.</p>
         </div>
         
         {/* Invoice Card */}

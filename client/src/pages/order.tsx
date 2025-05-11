@@ -475,7 +475,12 @@ const Order = () => {
                   disabled={isSubmitting || getTotalItems() < 12}
                   className="w-full py-3 px-4 bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent-dark))] text-white font-medium rounded-md transition-colors disabled:bg-gray-400"
                 >
-                  {isSubmitting ? "Processing..." : "Complete Order"}
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-t-transparent border-white"></span>
+                      Processing...
+                    </span>
+                  ) : "Complete Order"}
                 </Button>
                 
                 {getTotalItems() < 12 && (
