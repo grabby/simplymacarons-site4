@@ -8,7 +8,6 @@ import Flavors from "@/pages/flavors";
 import Order from "@/pages/order";
 import About from "@/pages/about";
 import Invoice from "@/pages/invoice";
-import CustomBox from "@/pages/custom-box";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import CartBanner from "@/components/CartBanner";
@@ -76,13 +75,7 @@ function Router() {
             </PageWrapper>
           )}
         </Route>
-        <Route path="/custom-box">
-          {(params) => (
-            <PageWrapper>
-              <CustomBox />
-            </PageWrapper>
-          )}
-        </Route>
+
         <Route path="/order">
           {(params) => (
             <PageWrapper>
