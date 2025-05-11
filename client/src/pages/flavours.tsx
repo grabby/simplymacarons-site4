@@ -117,7 +117,7 @@ const Flavors = () => {
                     className="w-full h-48 object-cover" 
                     onError={(e) => {
                       // Fallback if the image fails to load
-                      e.currentTarget.src = 'https://static.wixstatic.com/media/c8d9b4_fb388f6b9fe24afba595d0e4cbf5946c~mv2.jpg';
+                      e.currentTarget.src = 'https://raw.githubusercontent.com/grabby/simplymacarons/main/assets/images/simply-macarons-colourful.jpg';
                     }}
                   />
                   

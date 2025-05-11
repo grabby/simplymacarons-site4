@@ -45,6 +45,11 @@ const NavBar = () => {
       
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center">
+          <img 
+            src="https://raw.githubusercontent.com/grabby/simplymacarons/main/assets/images/simply-macarons-logo.jpg" 
+            alt="Simply Macarons Logo"
+            className="h-10 mr-2 rounded-md"
+          />
           <span className="font-display text-2xl font-bold text-[hsl(var(--accent))]">Simply Macarons</span>
         </Link>
         
@@ -87,6 +92,13 @@ const NavBar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="px-4 py-3 shadow-inner bg-[hsl(var(--primary-light))] md:hidden">
+          <div className="flex items-center mb-4">
+            <img 
+              src="https://raw.githubusercontent.com/grabby/simplymacarons/main/assets/images/simply-macarons-logo.jpg" 
+              alt="Simply Macarons Logo"
+              className="h-8 mr-2 rounded-md"
+            />
+          </div>
           <nav className="flex flex-col space-y-3">
             <Link to="/" onClick={() => setMobileMenuOpen(false)} 
               className={`font-medium hover:text-[hsl(var(--accent))] transition-colors py-2 ${location === '/' ? 'text-[hsl(var(--accent))]' : ''}`}>
