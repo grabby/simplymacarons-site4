@@ -57,35 +57,35 @@ export class MemStorage implements IStorage {
       {
         name: "Vanilla",
         description: "Classic vanilla macaron with smooth vanilla buttercream filling",
-        imageUrl: "https://images.pexels.com/photos/7474241/pexels-photo-7474241.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_fb388f6b9fe24afba595d0e4cbf5946c~mv2.jpg",
         price: 200, // $2.00
         available: true
       },
       {
         name: "Chocolate",
         description: "Rich chocolate macaron with dark chocolate ganache",
-        imageUrl: "https://images.pexels.com/photos/3188432/pexels-photo-3188432.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_b67d8cd34ea649418aa13a3d5c40e89e~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Salted Caramel",
         description: "Sweet and salty caramel macaron with decadent caramel filling",
-        imageUrl: "https://images.pexels.com/photos/6278664/pexels-photo-6278664.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_f44a3c14ce254dd693a57bbde18e5ebb~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Raspberry",
         description: "Vibrant raspberry macaron with raspberry jam filling",
-        imageUrl: "https://images.pexels.com/photos/6605309/pexels-photo-6605309.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_3bb51f8785d14734adf5c661c8eddb3d~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Pistachio",
         description: "Nutty pistachio macaron with creamy pistachio buttercream",
-        imageUrl: "https://images.pexels.com/photos/2014693/pexels-photo-2014693.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_7d8a3c9ca1ed4d10a43a5d4e4d50e2f4~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -93,7 +93,7 @@ export class MemStorage implements IStorage {
       {
         name: "Lemon",
         description: "Tangy lemon macaron with zesty lemon curd filling",
-        imageUrl: "https://images.pexels.com/photos/6277543/pexels-photo-6277543.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_c42e00a9d1ce4626a9b3b14f32e8c21f~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -101,21 +101,21 @@ export class MemStorage implements IStorage {
       {
         name: "Hazelnut Chocolate",
         description: "Hazelnut-infused macaron with chocolate hazelnut filling",
-        imageUrl: "https://images.pexels.com/photos/2035037/pexels-photo-2035037.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_b67d8cd34ea649418aa13a3d5c40e89e~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Coffee",
         description: "Bold coffee macaron with espresso buttercream",
-        imageUrl: "https://images.pexels.com/photos/8028518/pexels-photo-8028518.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_6d683cc84e1d408c84c3c20b02a0af5d~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Earl Grey",
         description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
-        imageUrl: "https://images.pexels.com/photos/3769014/pexels-photo-3769014.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_c15e8b61fe434d889de5781e992a5621~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -123,14 +123,14 @@ export class MemStorage implements IStorage {
       {
         name: "Strawberry",
         description: "Sweet strawberry macaron with strawberry jam filling",
-        imageUrl: "https://images.pexels.com/photos/6133506/pexels-photo-6133506.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_ce05939e3f6c49aea073530a4f70be07~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Cookies & Cream",
         description: "Delicious cookies & cream macaron with creamy Oreo filling",
-        imageUrl: "https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_bff39b3e98e849b09423ef51e963c4a3~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -138,7 +138,7 @@ export class MemStorage implements IStorage {
       {
         name: "Red Velvet",
         description: "Rich red velvet macaron with cream cheese filling",
-        imageUrl: "https://images.pexels.com/photos/7506344/pexels-photo-7506344.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_0c5d9d9f69bd470e8e97a13d66a44286~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -146,14 +146,14 @@ export class MemStorage implements IStorage {
       {
         name: "Matcha",
         description: "Japanese green tea macaron with matcha buttercream",
-        imageUrl: "https://images.pexels.com/photos/8472714/pexels-photo-8472714.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_2c564e6daa1b45b9a1fbaacb176a3fe9~mv2.jpg",
         price: 200,
         available: true
       },
       {
         name: "Fuzzy Peach",
         description: "Sweet peach-flavored macaron with fuzzy peach filling",
-        imageUrl: "https://images.pexels.com/photos/4686960/pexels-photo-4686960.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_0cbb3cd7ce3948eb9e42f5d1f5ee20ed~mv2.jpg",
         price: 200,
         available: true,
         tags: ["Kid Favourite"]
@@ -161,7 +161,7 @@ export class MemStorage implements IStorage {
       {
         name: "Crème Brûlée",
         description: "Classic crème brûlée macaron with caramelized sugar top",
-        imageUrl: "https://images.pexels.com/photos/4686957/pexels-photo-4686957.jpeg",
+        imageUrl: "https://static.wixstatic.com/media/c8d9b4_f44a3c14ce254dd693a57bbde18e5ebb~mv2.jpg",
         price: 200,
         available: true
       }
