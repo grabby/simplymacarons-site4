@@ -57,35 +57,35 @@ export class MemStorage implements IStorage {
       {
         name: "Vanilla",
         description: "Classic vanilla macaron with smooth vanilla buttercream filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/vanilla.svg",
         price: 200, // $2.00
         available: true
       },
       {
         name: "Chocolate",
         description: "Rich chocolate macaron with dark chocolate ganache",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/chocolate.svg",
         price: 200,
         available: true
       },
       {
         name: "Salted Caramel",
         description: "Sweet and salty caramel macaron with decadent caramel filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/salted_caramel.svg",
         price: 200,
         available: true
       },
       {
         name: "Raspberry",
         description: "Vibrant raspberry macaron with raspberry jam filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/raspberry.svg",
         price: 200,
         available: true
       },
       {
         name: "Pistachio",
         description: "Nutty pistachio macaron with creamy pistachio buttercream",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/pistachio.svg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -93,7 +93,7 @@ export class MemStorage implements IStorage {
       {
         name: "Lemon",
         description: "Tangy lemon macaron with zesty lemon curd filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/lemon.svg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -101,21 +101,21 @@ export class MemStorage implements IStorage {
       {
         name: "Hazelnut Chocolate",
         description: "Hazelnut-infused macaron with chocolate hazelnut filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/chocolate.svg",
         price: 200,
         available: true
       },
       {
         name: "Coffee",
         description: "Bold coffee macaron with espresso buttercream",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/chocolate.svg",
         price: 200,
         available: true
       },
       {
         name: "Earl Grey",
         description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/earlgrey.svg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -123,14 +123,14 @@ export class MemStorage implements IStorage {
       {
         name: "Strawberry",
         description: "Sweet strawberry macaron with strawberry jam filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/raspberry.svg",
         price: 200,
         available: true
       },
       {
         name: "Cookies & Cream",
         description: "Delicious cookies & cream macaron with creamy Oreo filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/vanilla.svg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -138,7 +138,7 @@ export class MemStorage implements IStorage {
       {
         name: "Red Velvet",
         description: "Rich red velvet macaron with cream cheese filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/raspberry.svg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -146,14 +146,14 @@ export class MemStorage implements IStorage {
       {
         name: "Matcha",
         description: "Japanese green tea macaron with matcha buttercream",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/pistachio.svg",
         price: 200,
         available: true
       },
       {
         name: "Fuzzy Peach",
         description: "Sweet peach-flavored macaron with fuzzy peach filling",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/lemon.svg",
         price: 200,
         available: true,
         tags: ["Kid Favourite"]
@@ -161,7 +161,7 @@ export class MemStorage implements IStorage {
       {
         name: "Crème Brûlée",
         description: "Classic crème brûlée macaron with caramelized sugar top",
-        imageUrl: "/attached_assets/cremebrulee.png",
+        imageUrl: "/attached_assets/salted_caramel.svg",
         price: 200,
         available: true
       }
