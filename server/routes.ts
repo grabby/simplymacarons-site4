@@ -73,8 +73,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         lastName: orderData.lastName,
         email: orderData.email,
         phone: orderData.phone,
-        pickupDate: orderData.pickupDate,
-        pickupTime: orderData.pickupTime,
+        pickupDate: orderData.pickupDate || "",
+        pickupTime: orderData.pickupTime || "",
         specialInstructions: orderData.specialInstructions,
         items: orderData.items,
         total

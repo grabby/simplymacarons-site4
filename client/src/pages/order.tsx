@@ -288,78 +288,10 @@ const Order = () => {
                   )}
                 />
                 
-                <FormField
-                  control={form.control}
-                  name="pickupDate"
-                  render={({ field }) => (
-                    <FormItem className="mb-4">
-                      <FormLabel>Pickup Date</FormLabel>
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <FormControl>
-                            <Button
-                              variant={"outline"}
-                              className={cn(
-                                "w-full pl-3 text-left font-normal",
-                                !field.value && "text-muted-foreground"
-                              )}
-                            >
-                              {field.value ? (
-                                format(new Date(field.value), "PPP")
-                              ) : (
-                                <span>Pick a date</span>
-                              )}
-                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                            </Button>
-                          </FormControl>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0" align="start">
-                          <Calendar
-                            mode="single"
-                            selected={field.value ? new Date(field.value) : undefined}
-                            onSelect={(date) => {
-                              if (date) {
-                                field.onChange(format(date, "yyyy-MM-dd"));
-                              }
-                            }}
-                            disabled={(date) => !isAfter(date, minPickupDate)}
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
-                      <p className="mt-1 text-xs text-gray-500">Please select a date at least 48 hours from now.</p>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="pickupTime"
-                  render={({ field }) => (
-                    <FormItem className="mb-4">
-                      <FormLabel>Pickup Time</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a time" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="10:00">10:00 AM</SelectItem>
-                          <SelectItem value="11:00">11:00 AM</SelectItem>
-                          <SelectItem value="12:00">12:00 PM</SelectItem>
-                          <SelectItem value="13:00">1:00 PM</SelectItem>
-                          <SelectItem value="14:00">2:00 PM</SelectItem>
-                          <SelectItem value="15:00">3:00 PM</SelectItem>
-                          <SelectItem value="16:00">4:00 PM</SelectItem>
-                          <SelectItem value="17:00">5:00 PM</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <div className="mb-4 p-4 bg-[hsl(var(--secondary-light))] rounded-lg">
+                  <h4 className="font-medium mb-2">Pickup Information</h4>
+                  <p className="text-sm">After placing your order, we'll contact you via email to arrange a convenient pickup date and time (minimum 48 hours notice required).</p>
+                </div>
                 
                 <div className="mb-6">
                   <h4 className="font-medium text-lg mb-3">Delivery Options</h4>
