@@ -31,20 +31,47 @@ function formatCurrency(cents: number): string {
 }
 
 /**
+ * Safely formats a date using date-fns.
+ */
+function formatOrderDate(dateValue: Date | string): string {
+  try {
+    const date = typeof dateValue === 'string' ? new Date(dateValue) : dateValue;
+    if (isNaN(date.getTime())) {
+      return new Date().toLocaleDateString(); // Fallback to current date if invalid
+    }
+    return format(date, "PPP");
+  } catch (error) {
+    console.error("Error formatting order date:", error);
+    return new Date().toLocaleDateString(); // Fallback to current date
+  }
+}
+
+/**
  * Formats a pickup date and time string.
  */
 function formatPickupDateTime(date: string, time: string): string {
   if (!date || !time) return "N/A";
   
-  const formattedDate = format(new Date(date), "PPPP");
-  
-  // Convert from 24-hour to 12-hour format
-  const hour = parseInt(time.split(':')[0], 10);
-  const minute = time.split(':')[1] || "00";
-  const ampm = hour >= 12 ? "PM" : "AM";
-  const formattedHour = hour % 12 || 12;
-  
-  return `${formattedDate} at ${formattedHour}:${minute} ${ampm}`;
+  try {
+    // Make sure the date is valid
+    const dateObj = new Date(date);
+    if (isNaN(dateObj.getTime())) {
+      return `${date} at ${time}`;
+    }
+    
+    const formattedDate = format(dateObj, "PPPP");
+    
+    // Convert from 24-hour to 12-hour format
+    const hour = parseInt(time.split(':')[0], 10);
+    const minute = time.split(':')[1] || "00";
+    const ampm = hour >= 12 ? "PM" : "AM";
+    const formattedHour = hour % 12 || 12;
+    
+    return `${formattedDate} at ${formattedHour}:${minute} ${ampm}`;
+  } catch (error) {
+    console.error("Error formatting date/time:", error);
+    return `${date} at ${time}`;
+  }
 }
 
 /**
