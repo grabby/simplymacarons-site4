@@ -21,11 +21,13 @@ const About = () => {
         </div>
         
         <div className="mb-12 text-center">
-          <img 
-            src="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg" 
-            alt="Assorted colorful macarons" 
-            className="rounded-xl shadow-lg max-w-lg mx-auto h-auto" 
-          />
+          <div className="max-w-md mx-auto px-4">
+            <img 
+              src="https://simplymacarons.ca/assets/images/simply-macarons-colourful.jpg" 
+              alt="Assorted colorful macarons" 
+              className="rounded-xl shadow-lg w-full h-auto object-cover" 
+            />
+          </div>
         </div>
         
         <div className="bg-white p-6 rounded-xl shadow-md">
