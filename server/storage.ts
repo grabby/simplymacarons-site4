@@ -14,10 +14,15 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   
-  // Flavors
-  getAllFlavors(): Promise<Flavor[]>;
-  getFlavor(id: number): Promise<Flavor | undefined>;
-  createFlavor(flavor: InsertFlavor): Promise<Flavor>;
+  // Flavours
+  getAllFlavors(): Promise<Flavor[]>; // Keep for backward compatibility
+  getFlavor(id: number): Promise<Flavor | undefined>; // Keep for backward compatibility
+  createFlavor(flavor: InsertFlavor): Promise<Flavor>; // Keep for backward compatibility
+  
+  // New Canadian spelling methods
+  getAllFlavours(): Promise<Flavor[]>;
+  getFlavour(id: number): Promise<Flavor | undefined>;
+  createFlavour(flavour: InsertFlavor): Promise<Flavor>;
   
   // Orders
   createOrder(order: InsertOrder): Promise<Order>;
@@ -194,9 +199,27 @@ export class MemStorage implements IStorage {
   
   async createFlavor(insertFlavor: InsertFlavor): Promise<Flavor> {
     const id = this.flavorCurrentId++;
-    const flavor: Flavor = { ...insertFlavor, id };
+    const flavor: Flavor = { 
+      ...insertFlavor, 
+      id,
+      available: insertFlavor.available ?? true,
+      tags: insertFlavor.tags ?? null
+    };
     this.flavorsMap.set(id, flavor);
     return flavor;
+  }
+  
+  // Canadian spelling methods - call the original methods
+  async getAllFlavours(): Promise<Flavor[]> {
+    return this.getAllFlavors();
+  }
+  
+  async getFlavour(id: number): Promise<Flavor | undefined> {
+    return this.getFlavor(id);
+  }
+  
+  async createFlavour(insertFlavour: InsertFlavor): Promise<Flavor> {
+    return this.createFlavor(insertFlavour);
   }
   
   // Orders

@@ -9,7 +9,17 @@ import { sendOrderEmails } from "./emailService";
 export async function registerRoutes(app: Express): Promise<Server> {
   // API Routes - prefix all routes with /api
 
-  // Get all flavors
+  // Get all flavours
+  app.get("/api/flavours", async (req: Request, res: Response) => {
+    try {
+      const flavours = await storage.getAllFlavors();
+      res.json(flavours);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch flavours" });
+    }
+  });
+  
+  // Keep the old endpoint for backward compatibility
   app.get("/api/flavors", async (req: Request, res: Response) => {
     try {
       const flavors = await storage.getAllFlavors();
@@ -19,7 +29,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get a specific flavor
+  // Get a specific flavour
+  app.get("/api/flavours/:id", async (req: Request, res: Response) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid flavour ID" });
+      }
+      
+      const flavour = await storage.getFlavor(id);
+      if (!flavour) {
+        return res.status(404).json({ message: "Flavour not found" });
+      }
+      
+      res.json(flavour);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch flavour" });
+    }
+  });
+  
+  // Keep the old endpoint for backward compatibility
   app.get("/api/flavors/:id", async (req: Request, res: Response) => {
     try {
       const id = parseInt(req.params.id);

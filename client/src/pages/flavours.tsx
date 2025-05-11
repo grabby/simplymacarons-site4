@@ -23,7 +23,7 @@ const Flavors = () => {
 
   // Fetch flavors from the server
   const { data: flavors, isLoading, error } = useQuery<Flavor[]>({
-    queryKey: ["/api/flavors"],
+    queryKey: ["/api/flavours"],
   });
 
   const handleQuantityChange = (flavorId: number, delta: number) => {
