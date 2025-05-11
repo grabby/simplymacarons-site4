@@ -37,7 +37,7 @@ const Home = () => {
                   Artisanal Macarons Made with Love
                 </h1>
                 <p className="text-white/90 mb-6 md:text-lg">
-                  Handcrafted with premium ingredients for a taste of pure delight
+                  Handcrafted delights available in classic, dairy-free, and gluten-free options
                 </p>
                 <Link to="/flavors">
                   <motion.button
@@ -64,7 +64,7 @@ const Home = () => {
                 <Cookie className="h-6 w-6 text-[hsl(var(--accent))]" />
               </div>
               <h3 className="font-display text-xl font-semibold mb-2">Premium Ingredients</h3>
-              <p className="text-sm">We use only the finest organic ingredients to create our delicate macarons.</p>
+              <p className="text-sm">We use only the finest quality ingredients to create our delicate, flavorful macarons.</p>
             </motion.div>
             
             <motion.div 
@@ -89,8 +89,8 @@ const Home = () => {
               <div className="inline-block p-3 rounded-full bg-[hsl(var(--primary))] mb-4">
                 <Heart className="h-6 w-6 text-[hsl(var(--accent))]" />
               </div>
-              <h3 className="font-display text-xl font-semibold mb-2">Made With Love</h3>
-              <p className="text-sm">Each macaron is handcrafted with care and passion for the perfect bite.</p>
+              <h3 className="font-display text-xl font-semibold mb-2">Dietary Options</h3>
+              <p className="text-sm">We offer dairy-free and gluten-free options so everyone can enjoy our delicious macarons.</p>
             </motion.div>
           </div>
           

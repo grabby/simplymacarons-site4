@@ -4,8 +4,8 @@ import SEO from "@/components/SEO";
 const About = () => {
   // SEO configuration
   const seoTitle = "About Simply Macarons - Victoria BC";
-  const seoDescription = "Simply Macarons is a home-based artisanal macaron bakery in Victoria, BC. Learn about our passion for creating perfect handcrafted macarons with premium ingredients and traditional techniques.";
-  const seoKeywords = "about simply macarons, victoria macaron bakery, handcrafted macarons, artisanal macarons, local bakery victoria bc, macaron maker, macaron process";
+  const seoDescription = "Simply Macarons is a home-based artisanal macaron bakery in Victoria, BC, offering classic, dairy-free, and gluten-free options. Learn about our passion for creating perfect handcrafted macarons with premium ingredients.";
+  const seoKeywords = "about simply macarons, victoria macaron bakery, handcrafted macarons, artisanal macarons, dairy-free macarons, gluten-free macarons, local bakery victoria bc, macaron maker";
 
   return (
     <section className="py-12 bg-[hsl(var(--primary-light))]">
@@ -52,6 +52,11 @@ const About = () => {
             <div>
               <h4 className="font-display text-lg font-semibold mb-2">How should I store my macarons?</h4>
               <p className="text-sm">Macarons are best enjoyed within 3-5 days of purchase. Store them in an airtight container in the refrigerator, and bring to room temperature before enjoying for the best flavor and texture.</p>
+            </div>
+            
+            <div>
+              <h4 className="font-display text-lg font-semibold mb-2">Do you offer dietary options?</h4>
+              <p className="text-sm">Yes! We offer dairy-free and gluten-free macaron options. Please specify your dietary requirements when placing your order, and we'll ensure your macarons are prepared accordingly.</p>
             </div>
           </div>
         </div>
