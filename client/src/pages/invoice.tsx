@@ -45,7 +45,7 @@ const Invoice = ({ orderNumber: propOrderNumber }: InvoiceProps) => {
   const seoKeywords = "macaron order invoice, macaron receipt, order confirmation, simply macarons order, victoria bakery order";
 
   // Format pickup date and time
-  const formatPickupDateTime = (date?: string, time?: string) => {
+  const formatPickupDateTime = (date: string | null | undefined, time: string | null | undefined) => {
     if (!date || !time) return "To be arranged via email";
     
     try {

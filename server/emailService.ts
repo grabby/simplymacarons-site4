@@ -33,7 +33,11 @@ function formatCurrency(cents: number): string {
 /**
  * Safely formats a date using date-fns.
  */
-function formatOrderDate(dateValue: Date | string): string {
+function formatOrderDate(dateValue: Date | string | null | undefined): string {
+  if (!dateValue) {
+    return new Date().toLocaleDateString(); // Fallback to current date if no value
+  }
+  
   try {
     const date = typeof dateValue === 'string' ? new Date(dateValue) : dateValue;
     if (isNaN(date.getTime())) {
@@ -49,14 +53,14 @@ function formatOrderDate(dateValue: Date | string): string {
 /**
  * Formats a pickup date and time string.
  */
-function formatPickupDateTime(date: string, time: string): string {
-  if (!date || !time) return "N/A";
+function formatPickupDateTime(date: string | null | undefined, time: string | null | undefined): string {
+  if (!date || !time) return "To be arranged via email";
   
   try {
     // Make sure the date is valid
     const dateObj = new Date(date);
     if (isNaN(dateObj.getTime())) {
-      return `${date} at ${time}`;
+      return "To be arranged via email";
     }
     
     const formattedDate = format(dateObj, "PPPP");
