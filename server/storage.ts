@@ -57,35 +57,35 @@ export class MemStorage implements IStorage {
       {
         name: "Vanilla",
         description: "Classic vanilla macaron with smooth vanilla buttercream filling",
-        imageUrl: "/attached_assets/vanilla.svg",
+        imageUrl: "https://images.pexels.com/photos/7474241/pexels-photo-7474241.jpeg",
         price: 200, // $2.00
         available: true
       },
       {
         name: "Chocolate",
         description: "Rich chocolate macaron with dark chocolate ganache",
-        imageUrl: "/attached_assets/chocolate.svg",
+        imageUrl: "https://images.pexels.com/photos/3188432/pexels-photo-3188432.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Salted Caramel",
         description: "Sweet and salty caramel macaron with decadent caramel filling",
-        imageUrl: "/attached_assets/salted_caramel.svg",
+        imageUrl: "https://images.pexels.com/photos/6278664/pexels-photo-6278664.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Raspberry",
         description: "Vibrant raspberry macaron with raspberry jam filling",
-        imageUrl: "/attached_assets/raspberry.svg",
+        imageUrl: "https://images.pexels.com/photos/6605309/pexels-photo-6605309.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Pistachio",
         description: "Nutty pistachio macaron with creamy pistachio buttercream",
-        imageUrl: "/attached_assets/pistachio.svg",
+        imageUrl: "https://images.pexels.com/photos/2014693/pexels-photo-2014693.jpeg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -93,7 +93,7 @@ export class MemStorage implements IStorage {
       {
         name: "Lemon",
         description: "Tangy lemon macaron with zesty lemon curd filling",
-        imageUrl: "/attached_assets/lemon.svg",
+        imageUrl: "https://images.pexels.com/photos/6277543/pexels-photo-6277543.jpeg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -101,21 +101,21 @@ export class MemStorage implements IStorage {
       {
         name: "Hazelnut Chocolate",
         description: "Hazelnut-infused macaron with chocolate hazelnut filling",
-        imageUrl: "/attached_assets/chocolate.svg",
+        imageUrl: "https://images.pexels.com/photos/2035037/pexels-photo-2035037.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Coffee",
         description: "Bold coffee macaron with espresso buttercream",
-        imageUrl: "/attached_assets/chocolate.svg",
+        imageUrl: "https://images.pexels.com/photos/8028518/pexels-photo-8028518.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Earl Grey",
         description: "Fragrant Earl Grey tea-infused macaron with vanilla filling",
-        imageUrl: "/attached_assets/earlgrey.svg",
+        imageUrl: "https://images.pexels.com/photos/3769014/pexels-photo-3769014.jpeg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -123,14 +123,14 @@ export class MemStorage implements IStorage {
       {
         name: "Strawberry",
         description: "Sweet strawberry macaron with strawberry jam filling",
-        imageUrl: "/attached_assets/raspberry.svg",
+        imageUrl: "https://images.pexels.com/photos/6133506/pexels-photo-6133506.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Cookies & Cream",
         description: "Delicious cookies & cream macaron with creamy Oreo filling",
-        imageUrl: "/attached_assets/vanilla.svg",
+        imageUrl: "https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -138,7 +138,7 @@ export class MemStorage implements IStorage {
       {
         name: "Red Velvet",
         description: "Rich red velvet macaron with cream cheese filling",
-        imageUrl: "/attached_assets/raspberry.svg",
+        imageUrl: "https://images.pexels.com/photos/7506344/pexels-photo-7506344.jpeg",
         price: 200,
         available: true,
         tags: ["Top 5"]
@@ -146,14 +146,14 @@ export class MemStorage implements IStorage {
       {
         name: "Matcha",
         description: "Japanese green tea macaron with matcha buttercream",
-        imageUrl: "/attached_assets/pistachio.svg",
+        imageUrl: "https://images.pexels.com/photos/8472714/pexels-photo-8472714.jpeg",
         price: 200,
         available: true
       },
       {
         name: "Fuzzy Peach",
         description: "Sweet peach-flavored macaron with fuzzy peach filling",
-        imageUrl: "/attached_assets/lemon.svg",
+        imageUrl: "https://images.pexels.com/photos/4686960/pexels-photo-4686960.jpeg",
         price: 200,
         available: true,
         tags: ["Kid Favourite"]
@@ -161,7 +161,7 @@ export class MemStorage implements IStorage {
       {
         name: "Crème Brûlée",
         description: "Classic crème brûlée macaron with caramelized sugar top",
-        imageUrl: "/attached_assets/salted_caramel.svg",
+        imageUrl: "https://images.pexels.com/photos/4686957/pexels-photo-4686957.jpeg",
         price: 200,
         available: true
       }
