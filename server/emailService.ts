@@ -137,6 +137,8 @@ function generateItemsTable(order: EnhancedOrder): string {
  * Generates an HTML email for customer order confirmation.
  */
 function generateCustomerEmail(order: EnhancedOrder): string {
+  const currentDate = new Date().toLocaleDateString();
+  
   return `
     <!DOCTYPE html>
     <html>
@@ -169,7 +171,7 @@ function generateCustomerEmail(order: EnhancedOrder): string {
         <div class="section">
           <h2>Order Summary</h2>
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
-          <p><strong>Order Date:</strong> ${formatOrderDate(order.createdAt)}</p>
+          <p><strong>Order Date:</strong> ${currentDate}</p>
           
           ${generateItemsTable(order)}
         </div>
@@ -205,6 +207,8 @@ function generateCustomerEmail(order: EnhancedOrder): string {
  * Generates an HTML email notification for the business.
  */
 function generateBusinessEmail(order: EnhancedOrder): string {
+  const currentDate = new Date().toLocaleDateString();
+  
   return `
     <!DOCTYPE html>
     <html>
@@ -235,7 +239,7 @@ function generateBusinessEmail(order: EnhancedOrder): string {
         <div class="section">
           <h2>Order Details</h2>
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
-          <p><strong>Order Date:</strong> ${formatOrderDate(order.createdAt)}</p>
+          <p><strong>Order Date:</strong> ${currentDate}</p>
           <p><strong>Pickup Date:</strong> To be arranged via email</p>
           
           <h2>Customer Information</h2>
