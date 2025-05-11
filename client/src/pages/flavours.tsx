@@ -163,13 +163,6 @@ const Flavors = () => {
                       >
                         <Plus className="h-3 w-3" />
                       </Button>
-                      <Button 
-                        variant="outline" 
-                        className="h-7 p-0 px-2 text-xs"
-                        onClick={() => handleQuantityChange(flavor.id, 12)}
-                      >
-                        +12
-                      </Button>
                     </div>
                   </div>
                   

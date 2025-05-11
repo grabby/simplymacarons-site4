@@ -22,6 +22,8 @@ const CartBanner = () => {
   // Calculate macarons needed for discount
   const totalMacarons = getTotalItems();
   const macaronsToDiscount = Math.max(0, 50 - totalMacarons);
+  // Calculate boxes needed (assuming 12 macarons per box)
+  const boxesNeeded = Math.ceil(macaronsToDiscount / 12);
   const qualifiesForDiscount = totalMacarons >= 50;
   
   // Hide banner when cart is empty or on order page
@@ -79,7 +81,7 @@ const CartBanner = () => {
           {/* Discount message */}
           {!qualifiesForDiscount && (
             <div className="bg-[hsl(var(--secondary-light))] py-2 px-4 text-center text-sm">
-              Add {macaronsToDiscount} more macarons to get 10% off your order!
+              Add {boxesNeeded} more {boxesNeeded === 1 ? 'box' : 'boxes'} to get 10% off your order!
             </div>
           )}
           
